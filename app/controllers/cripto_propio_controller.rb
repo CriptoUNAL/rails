@@ -12,7 +12,7 @@ class CriptoPropioController < ApplicationController
   
   def descifrar
     output = params[:output]
-    key =  [:key]
+    key = params[:key]
 
     ans = {
       input: "#{output} decifrado inventado 🤙🏽"
