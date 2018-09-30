@@ -105,4 +105,10 @@ class CriptoPropioController < ApplicationController
     return templ
 
   end
+
+  #transformacion sb
+  def sb(array)
+
+    return perm
+  end
 end
