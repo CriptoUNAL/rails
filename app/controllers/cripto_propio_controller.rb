@@ -2,16 +2,12 @@ class CriptoPropioController < ApplicationController
   def cifrar
     input = params[:input]
     key = params[:key]
-
-    hexa = to_hexa(input)
-    per_lu1_o = [0, 1, 2, 3, 4, 5, 6, 7]
-    per_lu1_d = [5, 7, 1, 6, 2, 4, 0, 3]
-    templ_1 = lucifer(per_lu1_o, per_lu1_d, hexa)
-
-
-
-
-
+#####
+    msg = "hola tuu"
+    k = "perros jijueptas"
+    output = breaking(msg, k)
+    print output
+#####
     ans = {
         output: "#{input} cifrado inventado 🤙🏽"
     }
@@ -30,7 +26,10 @@ class CriptoPropioController < ApplicationController
     render json: ans
   end
 
-  #function addround key
+
+  
+
+#function addround key
   def addroundkey(m, k)
     temp = [0, 1, 2, 3, 4, 5, 6, 7]
 
@@ -40,7 +39,7 @@ class CriptoPropioController < ApplicationController
     return temp
   end
 
-  #keygenerator
+#keygenerator
   def key_gen(key)
     key = to_hexa(key)
     #si es la primera vez que ingresa la clave se hace la seleccion de los 8 caracteres a usar
@@ -85,16 +84,17 @@ class CriptoPropioController < ApplicationController
     return keys
   end
 
-  #Convert string to hexa array
+#Convert string to hexa array
   def to_hexa(word)
     asqui = word.each_byte.to_a
+    puts
     #print asqui
 
     #transformar a hexa
     return asqui.map.each {|num| num.to_s(16)}
   end
 
-  #permutaciones lucifer
+#permutaciones lucifer
   def lucifer (origen, destino, array)
     per_lu_o = origen
     per_lu_d = destino
@@ -112,10 +112,10 @@ class CriptoPropioController < ApplicationController
   end
 
 
-  #transformacion sb
+#transformacion sb
   def sb(array, inversa)
     sb = Hash[
-        "00" => "63", "01" => "7c ", "02" => "77", "03" => "7b ", "04" => "f2 ", "05" => "6b ", "06" => "6f ", "07" => "c5 ", "08" => "30", "09" => "1", "0a" => "67", "0b" => "2b ", "0c" => "fe ", "0d" => "d7 ", "0e" => "ab ", "0f" => "76",
+        "0" => "63", "1" => "7c ", "2" => "77", "3" => "7b ", "4" => "f2 ", "5" => "6b ", "6" => "6f ", "7" => "c5 ", "8" => "30", "9" => "1", "a" => "67", "b" => "2b ", "c" => "fe ", "d" => "d7 ", "e" => "ab ", "f" => "76",
         "10" => "ca ", "11" => "82", "12" => "c9 ", "13" => "7d ", "14" => "fa ", "15" => "59", "16" => "47", "17" => "f0 ", "18" => "ad ", "19" => "d4 ", "1a" => "a2 ", "1b" => "af ", "1c" => "9c ", "1d" => "a4 ", "1e" => "72", "1f" => "c0",
         "20" => "b7 ", "21" => "fd ", "22" => "93", "23" => "26", "24" => "36", "25" => "3f ", "26" => "f7 ", "27" => "cc ", "28" => "34", "29" => "a5 ", "2a" => "e5 ", "2b" => "f1 ", "2c" => "71", "2d" => "d8 ", "2e" => "31", "2f" => "15",
         "30" => "4", "31" => "c7 ", "32" => "23", "33" => "c3 ", "34" => "18", "35" => "96", "36" => "5", "37" => "9a ", "38" => "7", "39" => "12", "3a" => "80", "3b" => "e2 ", "3c" => "eb ", "3d" => "27", "3e" => "b2 ", "3f" => "75",
@@ -133,7 +133,7 @@ class CriptoPropioController < ApplicationController
         "f0" => "8c ", "f1" => "a1 ", "f2" => "89", "f3" => "0d ", "f4" => "bf ", "f5" => "e6 ", "f6" => "42", "f7" => "68", "f8" => "41", "f9" => "99", "fa" => "2d ", "fb" => "0f ", "fc" => "b0 ", "fd" => "54", "fe" => "bb ", "ff" => "16"]
 
     sb_i = Hash[
-        "00" => "52", "01" => "9", "02" => "6a ", "03" => "d5 ", "04" => "30", "05" => "36", "06" => "a5 ", "07" => "38", "08" => "bf ", "09" => "40", "0a" => "a3 ", "0b" => "9e ", "0c" => "81", "0d" => "f3 ", "0e" => "d7 ", "0f" => "fb",
+        "0" => "52", "1" => "9", "2" => "6a ", "3" => "d5 ", "4" => "30", "5" => "36", "6" => "a5 ", "7" => "38", "8" => "bf ", "9" => "40", "a" => "a3 ", "b" => "9e ", "c" => "81", "d" => "f3 ", "e" => "d7 ", "f" => "fb",
         "10" => "7c ", "11" => "e3 ", "12" => "39", "13" => "82", "14" => "9b ", "15" => "2f ", "16" => "ff ", "17" => "87", "18" => "34", "19" => "8e ", "1a" => "43", "1b" => "44", "1c" => "c4 ", "1d" => "de ", "1e" => "e9 ", "1f" => "cb",
         "20" => "54", "21" => "7b ", "22" => "94", "23" => "32", "24" => "a6 ", "25" => "c2 ", "26" => "23", "27" => "3d ", "28" => "ee ", "29" => "4c ", "2a" => "95", "2b" => "0b ", "2c" => "42", "2d" => "fa ", "2e" => "c3 ", "2f" => "4e",
         "30" => "8", "31" => "2e ", "32" => "a1 ", "33" => "66", "34" => "28", "35" => "d9 ", "36" => "24", "37" => "b2 ", "38" => "76", "39" => "5b ", "3a" => "a2 ", "3b" => "49", "3c" => "6d ", "3d" => "8b ", "3e" => "d1 ", "3f" => "25",
@@ -164,8 +164,161 @@ class CriptoPropioController < ApplicationController
     return array
   end
 
+  def breaking(msg, key)
+    output = []
+    #msg = "hola señoras y señores"
+    keys = key_gen(key)
+
+    n = msg.length
+    times = n/8
+    rest = n%8
+    extra = 0
+
+    if rest > 0
+      extra = 1
+    end
+
+    cont = 0
+    index = 0
+
+    until cont == times
+      temp = []
+      for i in 0..7
+        temp.push(msg[index+i])
+      end
+      temp =temp.reduce(:+)
+
+      output.push(sec_cifrado(temp, keys))
+
+      temp = nil
+      index += 8
+      cont += 1
+    end
+
+    if extra == 1
+      temp = []
+      for i in 0..7
+        if i > (rest-1)
+          temp.push("&")
+        else
+          temp.push(msg[index+i])
+        end
+      end
+      temp = temp.reduce(:+)
+
+      output.push(sec_cifrado(temp, keys))
+
+      temp = nil
+    end
+
+    return  output
+  end
+
+  def sec_cifrado(m, keys)
+    m = to_hexa(m)
+    per_lu1_o = [0, 1, 2, 3, 4, 5, 6, 7]
+    per_lu1_d = [5, 7, 1, 6, 2, 4, 0, 3]
+    per_rot_o = [0, 1, 2, 3, 4, 5, 6, 7]
+    per_rot_d = [2, 3, 4, 5, 6, 7, 0, 1]
+    per_lu2_o = [0, 1, 2, 3, 4, 5, 6, 7]
+    per_lu2_d = [7, 4, 6, 2, 3, 0, 1, 5]
+    m = lucifer(per_lu1_o, per_lu1_d, m)
+
+    for cont in 0..14
+      m = addroundkey(m, keys[cont])
+      m = sb(m, 0)
+      m = lucifer(per_rot_o, per_rot_d, m)
+    end
+    return lucifer(per_lu2_o, per_lu2_d, m)
+
+  end
 
 
+  msg = "hola tuu"
+  k = "perros jijueptas"
+  output = breaking(msg, k)
+  c_text = output[0]
+  if output.length > 1
+    for i in 1..(output.length-1)
+      c_text.concat(output[i])
+    end
+  end
+  puts "salida"
+
+  print c_text
+
+=begin
+def breaking_des(msg, key)
+  output = []
+  #msg = "hola señoras y señores"
+  keys = key_gen(key)
+
+  n = msg.length
+  times = n/8
+  rest = n%8
+  extra = 0
+
+  if rest > 0
+    extra = 1
+  end
+
+  cont = 0
+  index = 0
+
+  until cont == times
+    temp = []
+    for i in 0..7
+      temp.push(msg[index+i])
+    end
+    temp =temp.reduce(:+)
+
+    output.push(sec_descifrado(temp, keys))
+
+    temp = nil
+    index += 8
+    cont += 1
+  end
+
+  if extra == 1
+    temp = []
+    for i in 0..7
+      if i > (rest-1)
+        temp.push("&")
+      else
+        temp.push(msg[index+i])
+      end
+    end
+    temp = temp.reduce(:+)
+
+    output.push(sec_descifrado(temp, keys))
+
+    temp = nil
+  end
+
+  return  output
+end
+
+def sec_descifrado(m, keys)
+  #m = to_hexa(m)
+  per_lu1_o = [5, 7, 1, 6, 2, 4, 0, 3]
+  per_lu1_d = [0, 1, 2, 3, 4, 5, 6, 7]
+  per_rot_o = [2, 3, 4, 5, 6, 7, 0, 1]
+  per_rot_d = [0, 1, 2, 3, 4, 5, 6, 7]
+  per_lu2_o = [7, 4, 6, 2, 3, 0, 1, 5]
+  per_lu2_d = [0, 1, 2, 3, 4, 5, 6, 7]
+  m = lucifer(per_lu2_o, per_lu2_d, m)
+
+  for cont in 0..14
+    m = lucifer(per_rot_o, per_rot_d, m)
+    m = sb(m, 1)
+    m = addroundkey(m, keys[cont])
+  end
+  return lucifer(per_lu1_o, per_lu1_d, m)
+
+end
+
+output = breaking_des(c_text, k)
+=end
 
 
 
