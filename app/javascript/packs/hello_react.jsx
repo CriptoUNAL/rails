@@ -23,9 +23,9 @@ class Brehynner extends React.Component {
   render(){     
     const lista = this.state.registros.map( (registro, id) => (
         <tr key={id}>
-        <td>{registro.id}</td>
-        <td>{registro.cipher}</td>
-        <td>{registro.tipo}</td>
+        <td id = "font">{registro.id}</td>
+        <td id = "font">{registro.cipher}</td>
+        <td id = "font">{registro.tipo}</td>
         <td>
           <button onClick={ _ => this.props.onBtnUsar(registro) } className="btn btn-primary">Usar</button>
         </td>
@@ -34,11 +34,11 @@ class Brehynner extends React.Component {
 
     return(
       <table className = "table">
-        <thead>
+        <thead id ="cabeza_t">
           <tr>
-            <th scope="col">id</th>
-            <th scope="col">Ciphertext</th>
-            <th scope="col">Algoritmo</th>
+            <th id = "font" scope="col">id</th>
+            <th id = "font" scope="col">Ciphertext</th>
+            <th id = "font" scope="col">Algoritmo</th>
             <th></th>
           </tr>
         </thead>
@@ -145,7 +145,7 @@ class Root extends React.Component {
 
 
     return (
-          <div className ="container-fluid" >
+          <div className ="container" >
           <h1 id = "titulo_form" align ="center">Empecemos</h1>
           <div className="form ">
           <div className = "row">
@@ -158,7 +158,7 @@ class Root extends React.Component {
             </div>
             <div className = "col">
               <div className="form- ">
-                  <label id = "titulo_form" htmlFor="key">Ingresa la llave:</label>
+                  <label id = "titulo_form" htmlFor="key">Ingresa la llave(mínimo 16 caracteres):</label>
                   <textarea name="key" onChange={this.listenerKey} value={this.state.key}
                     className="form-control" />
               </div>
@@ -187,6 +187,7 @@ class Root extends React.Component {
             </div>
             </div>
             <div>
+              <h3 id="otro">asdasdas</h3>
             </div>
             <Brehynner onBtnUsar = {this.listenerBtnUsar.bind(this)}/>
           </div>
