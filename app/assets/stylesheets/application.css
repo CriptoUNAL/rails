@@ -13,34 +13,82 @@ x * compiled file so the styles you add here take precedence over styles defined
  *= require_self
  */
 
- @font-face {
-    font-family: "myFont";
-    src: url("myFont.ttf");
-  }
+ #jumbo_ppal{
+    background-color: white;
+    border-width: 20px;    
+    padding: 5px;
+    text-align: left;
+}
 
-  
  #titulo{
-     color: white;
-     margin-top: 10px;
-     font-family: 'Arial';
+     color: #00adff;
+     margin-top: 24px;
+     margin-left: 55px;
+     font-family: 'Offside', cursive;
      font-size: 30px;
+     font-style: bold;
  }
+
+ #texto{
+    color: black;
+    margin-top: 10px;
+    font-family: 'Offside', cursive;
+    font-size: 30px;
+}
+
+#img_barra{
+    margin-left: 90px;
+    margin-top: 15px;
+}
+
+#jumbito{
+    padding: 150px;
+    text-align: left;
+}
+
+#señorcongafas{
+    position: absolute;
+    right: 80px;
+    top: 210px;
+    width: 300px;
+    padding: 10px;
+}
  
+#txt_jmb{
+  color: grey;
+  font-family: 'Offside', cursive;
+}
+
  #desplegable{
-     width: 245%;
+     width: 100%;
+     font-family: 'Offside', cursive;
  }
 
  #boton{
      text-align: center;
  }
 
- #boton:nth-child(2){
- padding-left: 5px;
- }
+#cont_todo{
+    background-color: grey; 
+}
 
- #cont_ppal{
-     background-image: linear-gradient(to bottom right, #00F0FF, #00adff);
-     padding: 30px;
-     text-align: center;
- }
+.container-fluid {
+    padding: 0px;
+    background-image: linear-gradient(-90deg, #00aeffe0, #00adff);
+}
+
+#titulo_form{
+    font-family: 'Offside', cursive;
+    color: white;
+    margin-top: 24px;
+}
+
+.btn {
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Offside', cursive;
+
+}
 

@@ -20,7 +20,7 @@ class Brehynner extends React.Component {
     .then(registros => this.setState({registros}))
   }
 
-  render(){   
+  render(){     
     const lista = this.state.registros.map( (registro, id) => (
         <tr key={id}>
         <td>{registro.id}</td>
@@ -145,28 +145,27 @@ class Root extends React.Component {
 
 
     return (
-          <div className ="container" >
+          <div className ="container-fluid" >
+          <h1 id = "titulo_form" align ="center">Empecemos</h1>
           <div className="form ">
           <div className = "row">
             <div className = "col">
                 <div className="form-group">
-                  <label htmlFor="input">Plain-text:</label>
+                  <label id = "titulo_form" htmlFor="input">Ingresa el texto que deseas encriptar:</label>
                   <textarea name="input" onChange={this.listenerInput} value={this.state.input}
                     className="form-control" />
                 </div>       
             </div>
             <div className = "col">
               <div className="form- ">
-                  <label htmlFor="key">Key:</label>
+                  <label id = "titulo_form" htmlFor="key">Ingresa la llave:</label>
                   <textarea name="key" onChange={this.listenerKey} value={this.state.key}
                     className="form-control" />
               </div>
             </div>
            </div>
             <div className = "row">
-            <label>
-              Escoja el algoritmo
-            </label>
+            <label id = "titulo_form" htmlFor="key">Elige el algoritmo que deseas utilizar:</label>
                 <div className="form-group" id ="desplegable">
                     <select className="form-control" onChange={this.listenerChangeAlgorithm} >
                       {opcionesAlgorithmos}
@@ -174,7 +173,7 @@ class Root extends React.Component {
                 </div>
           </div>
               <div className="form-group">
-                <label htmlFor="output">Cipher-text:</label>
+              <label id = "titulo_form" htmlFor="key">Este es el texto cifrado:</label>
                 <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
                   className="form-control" />
               </div>
@@ -186,6 +185,8 @@ class Root extends React.Component {
                 Limpiar
               </button>
             </div>
+            </div>
+            <div>
             </div>
             <Brehynner onBtnUsar = {this.listenerBtnUsar.bind(this)}/>
           </div>
