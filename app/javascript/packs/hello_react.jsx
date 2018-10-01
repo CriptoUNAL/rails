@@ -11,6 +11,7 @@ class Brehynner extends React.Component {
   state = {
     registros:[]
   }
+
   componentDidMount(){
     fetch("cipher_text",{
     method: "get",
@@ -20,17 +21,19 @@ class Brehynner extends React.Component {
   }
 
   render(){   
-    const lista = this.state.registros.map(registro => (
-        <tr>
+    const lista = this.state.registros.map( (registro, id) => (
+        <tr key={id}>
         <td>{registro.id}</td>
         <td>{registro.cipher}</td>
         <td>{registro.tipo}</td>
-        <td><button onClick = {this.props.listenerUsar(registro)}className="btn  btn-primary">Usar</button></td>
+        <td>
+          <button onClick={ _ => this.props.onBtnUsar(registro) } className="btn btn-primary">Usar</button>
+        </td>
         </tr>
     ))
 
     return(
-      <table class = "table">
+      <table className = "table">
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -39,16 +42,15 @@ class Brehynner extends React.Component {
             <th></th>
           </tr>
         </thead>
+        <tbody>
           {lista}
+        </tbody>
       </table>
     )
   }
 }
 
 class Root extends React.Component {
-  listenerUsar(obj){
-    this.setState({output:obj.cipher,alg:obj.tipo})
-  }
 
   algoritmos = ["inventado", "des"]
 
@@ -68,7 +70,6 @@ class Root extends React.Component {
     this.listenerConsultar = this.listenerConsultar.bind(this)
     this.listenerClear = this.listenerClear.bind(this)
     this.listenerChangeAlgorithm = this.listenerChangeAlgorithm.bind(this)
-    this.listenerUsar = this.listenerUsar.bind(this)
   }
 
   listenerInput(e) {
@@ -89,6 +90,10 @@ class Root extends React.Component {
 
   listenerChangeAlgorithm(e) {
     this.setState({ alg: e.target.value })
+  }
+
+  listenerBtnUsar(obj){
+    this.setState({ output: obj.cipher, alg:obj.tipo })
   }
 
   listenerConsultar(e) {
@@ -182,7 +187,7 @@ class Root extends React.Component {
               </button>
             </div>
             </div>
-            <Brehynner listenerUsar = {this.listenerUsar}/>
+            <Brehynner onBtnUsar = {this.listenerBtnUsar.bind(this)}/>
           </div>
     )
   }
