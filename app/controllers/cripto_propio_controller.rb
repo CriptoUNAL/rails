@@ -4,10 +4,10 @@ class CriptoPropioController < ApplicationController
     key = params[:key]
 #####
     output = breaking(input, key)
-    #c_t_temp = mostrar(output)
+    c_t_temp = mostrar(output)
 #####
     ans = {
-      output: "#{output.join("")}"
+      output: "#{c_t_temp}"
     }
 
     render json: ans
@@ -16,14 +16,13 @@ class CriptoPropioController < ApplicationController
   def descifrar
     output = params[:output]
     key = params[:key]
-
-    output_l = breaking_des(output, key)
+    out_temp = output.force_encoding("UTF-8").encode("ISO-8859-1")
+    output_l = breaking_des(out_temp, key)
     c_t_temp = mostrar(output_l)
-    print c_t_temp
 
 
     ans = {
-      input: "#{output_l.join("-")}"
+      input: "#{c_t_temp}"
     }
 
     render json: ans
@@ -252,11 +251,14 @@ class CriptoPropioController < ApplicationController
       c_text[i] = c_text[i].strip
     end
 
-    bin = c_text.map.each {|num| num.strip.hex.to_s(2)}
+    bin = c_text.map.each {|num| num.delete(" ").hex.to_s(2)}
     cha = bin.map.each {|num| num.to_i(2).chr}
     c_t_temp = cha.reduce(:+)
-    return c_t_temp
+
+    return c_t_temp.force_encoding("ISO-8859-1").encode("UTF-8")
   end
+
+
 
   def breaking_des(msg, key)
     output = []
