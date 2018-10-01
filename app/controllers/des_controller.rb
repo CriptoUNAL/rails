@@ -375,7 +375,7 @@ class DesController < ApplicationController
     bloque.length.times{|i|
       bloque[i]=to_bits(bloque[i])
     }
-    salida ="0"
+    salida =""
     bloque.length.times{|i| 
     salida+=to_string(descifrar_DES(bloque[i],key))}
     return salida
