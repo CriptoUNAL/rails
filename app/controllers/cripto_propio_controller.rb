@@ -2,12 +2,12 @@ class CriptoPropioController < ApplicationController
   def cifrar
     input = params[:input]
     key = params[:key]
-#####
     output = breaking(input, key)
     c_t_temp = mostrar(output)
-#####
+    temp = Input.create(cipher:c_t_temp, tipo:"inventado")
+
     ans = {
-      output: "#{c_t_temp}"
+      output: "#{c_t_temp}", id: temp.id
     }
 
     render json: ans
@@ -328,6 +328,5 @@ class CriptoPropioController < ApplicationController
     return lucifer(per_lu1_o, per_lu1_d, m)
 
   end
-
 
 end
