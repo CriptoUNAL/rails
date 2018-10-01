@@ -97,37 +97,50 @@ class Root extends React.Component {
     ))
 
     return (
-      <div className="form ">
-        <div className="form-group">
-          <label htmlFor="input">Plain-text:</label>
-          <textarea name="input" onChange={this.listenerInput} value={this.state.input}
-            className="form-control" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="key">Key:</label>
-          <textarea name="key" onChange={this.listenerKey} value={this.state.key}
-            className="form-control" />
-        </div>
-        <div className="form-group">
-          <label htmlFor="output">Cipher-text:</label>
-          <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
-            className="form-control" />
-        </div>
+          <div className ="container" >
+          <div className="form ">
+          <div className = "row">
+            <div className = "col">
+                <div className="form-group">
+                  <label htmlFor="input">Plain-text:</label>
+                  <textarea name="input" onChange={this.listenerInput} value={this.state.input}
+                    className="form-control" />
+                </div>       
+            </div>
+            <div className = "col">
+              <div className="form- ">
+                  <label htmlFor="key">Key:</label>
+                  <textarea name="key" onChange={this.listenerKey} value={this.state.key}
+                    className="form-control" />
+              </div>
+            </div>
+           </div>
+            <div className = "row">
+            <label>
+              Escoja el algoritmo
+            </label>
+                <div className="form-group" id ="desplegable">
+                    <select className="form-control" onChange={this.listenerChangeAlgorithm} >
+                      {opcionesAlgorithmos}
+                    </select>
+                </div>
+          </div>
+              <div className="form-group">
+                <label htmlFor="output">Cipher-text:</label>
+                <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
+                  className="form-control" />
+              </div>
+            <div id = "boton" >
+              <button className="btn btn-primary" onClick={this.listenerConsultar}>
+                Consultar
+              </button>
+              <button className="btn btn-primary" onClick={this.listenerClear}>
+                Limpiar
+              </button>
+            </div>
 
-        <div className="form-group">
-          <select className="form-control" onChange={this.listenerChangeAlgorithm} >
-            {opcionesAlgorithmos}
-          </select>
-        </div>
-
-        <button className="btn btn-primary" onClick={this.listenerConsultar}>
-          Consultar
-        </button>
-        <button className="btn btn-primary" onClick={this.listenerClear}>
-          Limpiar
-        </button>
-
-      </div>
+            </div>
+          </div>
     )
   }
 }
