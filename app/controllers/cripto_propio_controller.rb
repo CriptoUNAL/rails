@@ -27,7 +27,7 @@ class CriptoPropioController < ApplicationController
   end
 
 
-  
+#desde aqui empieza los metodos, copiar y pegar esto para verificar
 
 #function addround key
   def addroundkey(m, k)
@@ -216,6 +216,9 @@ class CriptoPropioController < ApplicationController
 
   def sec_cifrado(m, keys)
     m = to_hexa(m)
+    puts "mensaje en hexa"
+    print m
+    puts
     per_lu1_o = [0, 1, 2, 3, 4, 5, 6, 7]
     per_lu1_d = [5, 7, 1, 6, 2, 4, 0, 3]
     per_rot_o = [0, 1, 2, 3, 4, 5, 6, 7]
@@ -244,82 +247,109 @@ class CriptoPropioController < ApplicationController
     end
   end
   puts "salida"
-
+  for i in 0..(c_text.length-1)
+    c_text[i] = c_text[i].strip
+  end
+  puts
   print c_text
+  puts
+  bin = c_text.map.each {|num| num.hex.to_s(2)}
+  cha = bin.map.each {|num| num.to_i(2).chr}
+  c_t_temp = cha.reduce(:+)
+  print c_t_temp
 
-=begin
-def breaking_des(msg, key)
-  output = []
-  #msg = "hola señoras y señores"
-  keys = key_gen(key)
 
-  n = msg.length
-  times = n/8
-  rest = n%8
-  extra = 0
+  def breaking_des(msg, key)
+    output = []
+    #msg = "hola señoras y señores"
+    keys = key_gen(key)
 
-  if rest > 0
-    extra = 1
-  end
+    n = msg.length
+    times = n/8
+    rest = n%8
+    extra = 0
 
-  cont = 0
-  index = 0
-
-  until cont == times
-    temp = []
-    for i in 0..7
-      temp.push(msg[index+i])
+    if rest > 0
+      extra = 1
     end
-    temp =temp.reduce(:+)
 
-    output.push(sec_descifrado(temp, keys))
+    cont = 0
+    index = 0
 
-    temp = nil
-    index += 8
-    cont += 1
-  end
-
-  if extra == 1
-    temp = []
-    for i in 0..7
-      if i > (rest-1)
-        temp.push("&")
-      else
+    until cont == times
+      temp = []
+      for i in 0..7
         temp.push(msg[index+i])
       end
+      temp =temp.reduce(:+)
+
+      output.push(sec_descifrado(temp, keys))
+
+      temp = nil
+      index += 8
+      cont += 1
     end
-    temp = temp.reduce(:+)
 
-    output.push(sec_descifrado(temp, keys))
+    if extra == 1
+      temp = []
+      for i in 0..7
+        if i > (rest-1)
+          temp.push("&")
+        else
+          temp.push(msg[index+i])
+        end
+      end
+      temp = temp.reduce(:+)
 
-    temp = nil
+      output.push(sec_descifrado(temp, keys))
+
+      temp = nil
+    end
+
+    return  output
   end
 
-  return  output
-end
+  def sec_descifrado(m, keys)
+    m = to_hexa(m)
+    per_lu1_o = [5, 7, 1, 6, 2, 4, 0, 3]
+    per_lu1_d = [0, 1, 2, 3, 4, 5, 6, 7]
+    per_rot_o = [2, 3, 4, 5, 6, 7, 0, 1]
+    per_rot_d = [0, 1, 2, 3, 4, 5, 6, 7]
+    per_lu2_o = [7, 4, 6, 2, 3, 0, 1, 5]
+    per_lu2_d = [0, 1, 2, 3, 4, 5, 6, 7]
+    m = lucifer(per_lu2_o, per_lu2_d, m)
+    aux = 14
+    for cont in 0..14
+      m = lucifer(per_rot_o, per_rot_d, m)
+      m = sb(m, 1)
+      m = addroundkey(m, keys[aux-cont])
+    end
+    return lucifer(per_lu1_o, per_lu1_d, m)
 
-def sec_descifrado(m, keys)
-  #m = to_hexa(m)
-  per_lu1_o = [5, 7, 1, 6, 2, 4, 0, 3]
-  per_lu1_d = [0, 1, 2, 3, 4, 5, 6, 7]
-  per_rot_o = [2, 3, 4, 5, 6, 7, 0, 1]
-  per_rot_d = [0, 1, 2, 3, 4, 5, 6, 7]
-  per_lu2_o = [7, 4, 6, 2, 3, 0, 1, 5]
-  per_lu2_d = [0, 1, 2, 3, 4, 5, 6, 7]
-  m = lucifer(per_lu2_o, per_lu2_d, m)
-
-  for cont in 0..14
-    m = lucifer(per_rot_o, per_rot_d, m)
-    m = sb(m, 1)
-    m = addroundkey(m, keys[cont])
   end
-  return lucifer(per_lu1_o, per_lu1_d, m)
 
-end
 
-output = breaking_des(c_text, k)
-=end
+  output = breaking_des(c_t_temp, k)
+  puts
+  print output
 
+  c_text = output[0]
+  if output.length > 1
+    for i in 1..(output.length-1)
+      c_text.concat(output[i])
+    end
+  end
+  puts "salida"
+  for i in 0..(c_text.length-1)
+    c_text[i] = c_text[i].strip
+  end
+  puts
+  print c_text
+  puts
+  bin = c_text.map.each {|num| num.hex.to_s(2)}
+  cha = bin.map.each {|num| num.to_i(2).chr}
+  c_t_temp = cha.reduce(:+)
+  print c_t_temp
 
 
 end
