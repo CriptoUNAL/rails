@@ -40,7 +40,7 @@ class Root extends React.Component {
   listenerKey(e) {
     this.setState({ key: e.target.value })
   }
-  
+
   listenerClear() {
     this.setState({ input: "", output: "" })
   }
@@ -92,35 +92,38 @@ class Root extends React.Component {
 
   render() {
 
-    const opcionesAlgorithmos = this.algoritmos.map((alg, ind) => (
-      <label key={ind}>
-        <input type="radio" value={alg} checked={this.state.alg === alg}
-          onChange={this.listenerChangeAlgorithm} />
-        {alg}
-      </label>
+    const opcionesAlgorithmos = this.algoritmos.map(alg => (
+      <option value={alg} key={alg}>{alg}</option>
     ))
 
     return (
-      <div>
-        <label>
-          Input:
-          <textarea name="input" onChange={this.listenerInput} value={this.state.input} />
-        </label>
-        <label>
-          Key:
-          <textarea name="key" onChange={this.listenerKey} value={this.state.key} />
-        </label>
-        <label>
-          Output:
-          <textarea name="output" onChange={this.listenerOutput} value={this.state.output} />
-        </label>
+      <div className="form ">
+        <div className="form-group">
+          <label htmlFor="input">Plain-text:</label>
+          <textarea name="input" onChange={this.listenerInput} value={this.state.input}
+            className="form-control" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="key">Key:</label>
+          <textarea name="key" onChange={this.listenerKey} value={this.state.key}
+            className="form-control" />
+        </div>
+        <div className="form-group">
+          <label htmlFor="output">Cipher-text:</label>
+          <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
+            className="form-control" />
+        </div>
 
-        {opcionesAlgorithmos}
+        <div className="form-group">
+          <select className="form-control" onChange={this.listenerChangeAlgorithm} >
+            {opcionesAlgorithmos}
+          </select>
+        </div>
 
-        <button onClick={this.listenerConsultar}>
+        <button className="btn btn-primary" onClick={this.listenerConsultar}>
           Consultar
         </button>
-        <button onClick={this.listenerClear}>
+        <button className="btn btn-primary" onClick={this.listenerClear}>
           Limpiar
         </button>
 
