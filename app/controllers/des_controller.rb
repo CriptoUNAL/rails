@@ -3,7 +3,7 @@ class DesController < ApplicationController
   def cifrar
     input = params[:input]
     key = params[:key]
-    output = init(input,kex,true)
+    output = init(input,key,true)
     ans = {
       output: "#{input} sera cifrado"
     }
@@ -15,7 +15,7 @@ class DesController < ApplicationController
     output = params[:output]
     key = params[:key]
     
-    output = init(input,kex,false)
+    output = init(input,key,falsey
     ans = {
       input: "#{output} sera descifrado"
     }
