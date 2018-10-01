@@ -6,8 +6,49 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
+class Brehynner extends React.Component {
+
+  state = {
+    registros:[]
+  }
+  componentDidMount(){
+    fetch("cipher_text",{
+    method: "get",
+    headers: { "Content-Type": "application/json" },
+    }).then(resp => resp.json())
+    .then(registros => this.setState({registros}))
+  }
+
+  render(){   
+    const lista = this.state.registros.map(registro => (
+        <tr>
+        <td>{registro.id}</td>
+        <td>{registro.cipher}</td>
+        <td>{registro.tipo}</td>
+        <td><button onClick = {this.props.listenerUsar(registro)}className="btn  btn-primary">Usar</button></td>
+        </tr>
+    ))
+
+    return(
+      <table class = "table">
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Ciphertext</th>
+            <th scope="col">Algoritmo</th>
+            <th></th>
+          </tr>
+        </thead>
+          {lista}
+      </table>
+    )
+  }
+}
 
 class Root extends React.Component {
+  listenerUsar(obj){
+    this.setState({output:obj.cipher,alg:obj.tipo})
+  }
 
   algoritmos = ["inventado", "des"]
 
@@ -27,6 +68,7 @@ class Root extends React.Component {
     this.listenerConsultar = this.listenerConsultar.bind(this)
     this.listenerClear = this.listenerClear.bind(this)
     this.listenerChangeAlgorithm = this.listenerChangeAlgorithm.bind(this)
+    this.listenerUsar = this.listenerUsar.bind(this)
   }
 
   listenerInput(e) {
@@ -96,6 +138,7 @@ class Root extends React.Component {
       <option value={alg} key={alg}>{alg}</option>
     ))
 
+
     return (
           <div className ="container" >
           <div className="form ">
@@ -138,8 +181,8 @@ class Root extends React.Component {
                 Limpiar
               </button>
             </div>
-
             </div>
+            <Brehynner listenerUsar = {this.listenerUsar}/>
           </div>
     )
   }
