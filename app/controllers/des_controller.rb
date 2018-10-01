@@ -318,6 +318,8 @@ class DesController < ApplicationController
       }
       if cadena.to_i(2).to_s(16).length==1
         salida += "0"+cadena.to_i(2).to_s(16)
+      elsif cadena.to_i(2).to_s(16).length==0
+        salida += "00"+cadena.to_i(2).to_s(16)
       else
       salida += cadena.to_i(2).to_s(16)
       end
