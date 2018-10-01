@@ -63,7 +63,7 @@ class Root extends React.Component {
 
     if (this.state.input.trim() != "") {
 
-      const payload = { input: this.state.input }
+      const payload = { input: this.state.input, key: this.state.key }
 
       fetch(`${this.state.alg}/cifrar`, {
         method: "post",
@@ -77,7 +77,7 @@ class Root extends React.Component {
     }
 
     if (this.state.output.trim() != "") {
-      const payload = { output: this.state.output }
+      const payload = { output: this.state.output, key: this.state.key }
       fetch(`${this.state.alg}/descifrar`, {
         method: "post",
         headers: { "Content-Type": "application/json" },

@@ -4,12 +4,10 @@ class CriptoPropioController < ApplicationController
     key = params[:key]
 #####
     output = breaking(input, key)
-
-    c_t_temp = mostrar(output)
-    print c_t_temp
+    #c_t_temp = mostrar(output)
 #####
     ans = {
-        output: "#{input} cifrado inventado 🤙🏽"
+      output: "#{output.join("")}"
     }
 
     render json: ans
@@ -25,7 +23,7 @@ class CriptoPropioController < ApplicationController
 
 
     ans = {
-        input: "#{output} decifrado inventado 🤙🏽"
+      input: "#{output_l.join("-")}"
     }
 
     render json: ans
@@ -171,7 +169,7 @@ class CriptoPropioController < ApplicationController
 
   def breaking(msg, key)
     output = []
-    #msg = "hola señoras y señores"
+    puts key
     keys = key_gen(key)
 
     n = msg.length
@@ -243,6 +241,7 @@ class CriptoPropioController < ApplicationController
 
   def mostrar(text)
     c_text = text[0]
+    
     if text.length > 1
       for i in 1..(text.length-1)
         c_text.concat(text[i])
@@ -253,7 +252,7 @@ class CriptoPropioController < ApplicationController
       c_text[i] = c_text[i].strip
     end
 
-    bin = c_text.map.each {|num| num.hex.to_s(2)}
+    bin = c_text.map.each {|num| num.strip.hex.to_s(2)}
     cha = bin.map.each {|num| num.to_i(2).chr}
     c_t_temp = cha.reduce(:+)
     return c_t_temp
