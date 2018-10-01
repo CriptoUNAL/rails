@@ -3,10 +3,10 @@ class CriptoPropioController < ApplicationController
     input = params[:input]
     key = params[:key]
 #####
-    msg = "hola tuu"
-    k = "perros jijueptas"
-    output = breaking(msg, k)
-    print output
+    output = breaking(input, key)
+
+    c_t_temp = mostrar(output)
+    print c_t_temp
 #####
     ans = {
         output: "#{input} cifrado inventado 🤙🏽"
@@ -18,6 +18,11 @@ class CriptoPropioController < ApplicationController
   def descifrar
     output = params[:output]
     key = params[:key]
+
+    output_l = breaking_des(output, key)
+    c_t_temp = mostrar(output_l)
+    print c_t_temp
+
 
     ans = {
         input: "#{output} decifrado inventado 🤙🏽"
@@ -236,28 +241,23 @@ class CriptoPropioController < ApplicationController
 
   end
 
-
-  msg = "hola tuu"
-  k = "perros jijueptas"
-  output = breaking(msg, k)
-  c_text = output[0]
-  if output.length > 1
-    for i in 1..(output.length-1)
-      c_text.concat(output[i])
+  def mostrar(text)
+    c_text = text[0]
+    if text.length > 1
+      for i in 1..(text.length-1)
+        c_text.concat(text[i])
+      end
     end
-  end
-  puts "salida"
-  for i in 0..(c_text.length-1)
-    c_text[i] = c_text[i].strip
-  end
-  puts
-  print c_text
-  puts
-  bin = c_text.map.each {|num| num.hex.to_s(2)}
-  cha = bin.map.each {|num| num.to_i(2).chr}
-  c_t_temp = cha.reduce(:+)
-  print c_t_temp
 
+    for i in 0..(c_text.length-1)
+      c_text[i] = c_text[i].strip
+    end
+
+    bin = c_text.map.each {|num| num.hex.to_s(2)}
+    cha = bin.map.each {|num| num.to_i(2).chr}
+    c_t_temp = cha.reduce(:+)
+    return c_t_temp
+  end
 
   def breaking_des(msg, key)
     output = []
@@ -327,29 +327,6 @@ class CriptoPropioController < ApplicationController
     return lucifer(per_lu1_o, per_lu1_d, m)
 
   end
-
-
-  output = breaking_des(c_t_temp, k)
-  puts
-  print output
-
-  c_text = output[0]
-  if output.length > 1
-    for i in 1..(output.length-1)
-      c_text.concat(output[i])
-    end
-  end
-  puts "salida"
-  for i in 0..(c_text.length-1)
-    c_text[i] = c_text[i].strip
-  end
-  puts
-  print c_text
-  puts
-  bin = c_text.map.each {|num| num.hex.to_s(2)}
-  cha = bin.map.each {|num| num.to_i(2).chr}
-  c_t_temp = cha.reduce(:+)
-  print c_t_temp
 
 
 end

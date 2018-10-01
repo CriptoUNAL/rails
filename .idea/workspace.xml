@@ -41,12 +41,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="rb" value="692" />
+          <entry key="rb" value="841" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Ruby" value="692" />
+          <entry key="Ruby" value="841" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -59,17 +59,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/cripto_propio_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="352" lean-forward="true" selection-start-line="352" selection-end-line="352" />
+            <state relative-caret-position="270">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
               <folding>
-                <element signature="e#220#384#0" />
-                <element signature="e#681#1537#0" />
-                <element signature="e#1569#1710#0" />
-                <element signature="e#1735#1992#0" />
-                <element signature="e#2014#9834#0" />
-                <element signature="e#9836#10524#0" />
-                <element signature="e#10526#11049#0" />
-                <element signature="e#11462#12160#0" />
+                <element signature="e#748#1604#0" />
+                <element signature="e#1636#1777#0" />
+                <element signature="e#1802#2059#0" />
+                <element signature="e#2081#9901#0" />
+                <element signature="e#9903#10591#0" />
+                <element signature="e#10593#11116#0" />
+                <element signature="e#11467#12165#0" />
+                <element signature="e#12167#12665#0" />
               </folding>
             </state>
           </provider>
@@ -270,12 +270,12 @@
       <option name="presentableId" value="Default" />
       <updated>1538332804166</updated>
       <workItem from="1538332806436" duration="2356000" />
-      <workItem from="1538338155940" duration="9325000" />
+      <workItem from="1538338155940" duration="9948000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11681000" />
+    <option name="totallyTimeSpent" value="12304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -361,17 +361,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/cripto_propio_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="352" lean-forward="true" selection-start-line="352" selection-end-line="352" />
+        <state relative-caret-position="270">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
-            <element signature="e#220#384#0" />
-            <element signature="e#681#1537#0" />
-            <element signature="e#1569#1710#0" />
-            <element signature="e#1735#1992#0" />
-            <element signature="e#2014#9834#0" />
-            <element signature="e#9836#10524#0" />
-            <element signature="e#10526#11049#0" />
-            <element signature="e#11462#12160#0" />
+            <element signature="e#748#1604#0" />
+            <element signature="e#1636#1777#0" />
+            <element signature="e#1802#2059#0" />
+            <element signature="e#2081#9901#0" />
+            <element signature="e#9903#10591#0" />
+            <element signature="e#10593#11116#0" />
+            <element signature="e#11467#12165#0" />
+            <element signature="e#12167#12665#0" />
           </folding>
         </state>
       </provider>
