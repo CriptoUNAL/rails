@@ -5,7 +5,7 @@ class DesController < ApplicationController
     key = params[:key]
     output = init(input,key,true)
     ans = {
-      output: "#{input} sera cifrado"
+      output: "#{output}"
     }
     
     render json: ans
@@ -15,9 +15,9 @@ class DesController < ApplicationController
     output = params[:output]
     key = params[:key]
     
-    output = init(input,key,falsey
+    output = init(input,key,false)
     ans = {
-      input: "#{output} sera descifrado"
+      output: "#{output}"
     }
 
     render json: ans
