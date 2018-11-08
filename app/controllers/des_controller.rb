@@ -4,10 +4,12 @@ class DesController < ApplicationController
     input = params[:input]
     key = params[:key]
     output = init(input,key,true)
+
+    temp = Input.create(cipher: output, tipo:"des")
     ans = {
-      output: "#{output}"
+      output: "#{output}", id: temp.id
     }
-    
+
     render json: ans
   end
   
@@ -15,9 +17,9 @@ class DesController < ApplicationController
     output = params[:output]
     key = params[:key]
     
-    output = init(input,key,false)
+    output = init(output,key,false)
     ans = {
-      output: "#{output}"
+      input: "#{output}"
     }
 
     render json: ans

@@ -14,44 +14,44 @@ x * compiled file so the styles you add here take precedence over styles defined
  */
 
  #jumbo_ppal{
-    background-color: white;
-    border-width: 20px;    
-    padding: 5px;
-    text-align: left;
+  background-color: white;
+  border-width: 20px;  
+  padding: 5px;
+  text-align: left;
 }
 
  #titulo{
-     color: #00adff;
-     margin-top: 24px;
-     margin-left: 55px;
-     font-family: 'Offside', cursive;
-     font-size: 30px;
-     font-style: bold;
+   color: #00adff;
+   margin-top: 24px;
+   margin-left: 55px;
+   font-family: 'Offside', cursive;
+   font-size: 30px;
+   font-style: bold;
  }
 
  #texto{
-    color: black;
-    margin-top: 10px;
-    font-family: 'Offside', cursive;
-    font-size: 30px;
+  color: black;
+  margin-top: 10px;
+  font-family: 'Offside', cursive;
+  font-size: 30px;
 }
 
 #img_barra{
-    margin-left: 90px;
-    margin-top: 15px;
+  margin-left: 90px;
+  margin-top: 15px;
 }
 
 #jumbito{
-    padding: 150px;
-    text-align: left;
+  padding: 150px;
+  text-align: left;
 }
 
 #señorcongafas{
-    position: absolute;
-    right: 80px;
-    top: 210px;
-    width: 300px;
-    padding: 10px;
+  position: absolute;
+  right: 80px;
+  top: 210px;
+  width: 300px;
+  padding: 10px;
 }
  
 #txt_jmb{
@@ -60,51 +60,42 @@ x * compiled file so the styles you add here take precedence over styles defined
 }
 
  #desplegable{
-     width: 100%;
-     font-family: 'Offside', cursive;
+   width: 100%;
+   font-family: 'Offside', cursive;
  }
 
  #boton{
-     text-align: center;
+   text-align: center;
  }
 
-#cont_todo{
-    background-color: grey; 
+.container-cripto {
+  background-image: linear-gradient(-90deg, #00adff, #00f0ff);
 }
 
-.container-fluid {
-    background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+.titulo_form{
+  font-family: 'Offside', cursive;
+  color: white;
+  margin-top: 24px;
 }
 
-#titulo_form{
-    font-family: 'Offside', cursive;
-    color: white;
-    margin-top: 24px;
-}
-
-.btn {
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: 'Offside', cursive;
-    background-color: #43434b;
-}
-
-#otro{
-    color: #00e1ff;
+.btn-cripto {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Offside', cursive;
+  background-color: #43434b;
 }
 
 #cabeza_t{
-    background-color: #43434b;
-    font-family: 'Offside', cursive;
+  background-color: #43434b;
+  font-family: 'Offside', cursive;
 }
 
-#font{
-    color: white;
-    font-family: 'Offside', cursive;
+.font{
+  color: white;
+  font-family: 'Offside', cursive;
 }
 .footer{
-    background-color: #43434b;
-    text-align: center; 
+  background-color: #43434b;
+  text-align: center; 
 }
