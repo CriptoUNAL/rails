@@ -1,0 +1,2 @@
+class RsaController < ApplicationController
+end
