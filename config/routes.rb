@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'des/cifrar'
   post 'des/descifrar'
   
+  get 'rsa/primos'
+
   root 'home#index'
   get 'cipher_text', to: 'home#consultar_cipher'
   get 'firma', to: 'home#signature'
