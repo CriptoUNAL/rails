@@ -5,11 +5,97 @@
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+x * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
  *= require_self
  */
+
+ #jumbo_ppal{
+  background-color: white;
+  border-width: 20px;  
+  padding: 5px;
+  text-align: left;
+}
+
+ #titulo{
+   color: #00adff;
+   margin-top: 24px;
+   margin-left: 55px;
+   font-family: 'Offside', cursive;
+   font-size: 30px;
+   font-style: bold;
+ }
+
+ #texto{
+  color: black;
+  margin-top: 10px;
+  font-family: 'Offside', cursive;
+  font-size: 30px;
+}
+
+#img_barra{
+  margin-left: 90px;
+  margin-top: 15px;
+}
+
+#jumbito{
+  padding: 150px;
+  text-align: left;
+}
+
+#señorcongafas{
+  position: absolute;
+  right: 80px;
+  top: 210px;
+  width: 300px;
+  padding: 10px;
+}
+ 
+#txt_jmb{
+  color: grey;
+  font-family: 'Offside', cursive;
+}
+
+ #desplegable{
+   width: 100%;
+   font-family: 'Offside', cursive;
+ }
+
+ #boton{
+   text-align: center;
+ }
+
+.container-cripto {
+  background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+}
+
+.titulo_form{
+  font-family: 'Offside', cursive;
+  color: white;
+  margin-top: 24px;
+}
+
+.btn-cripto {
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Offside', cursive;
+  background-color: #43434b;
+}
+
+#cabeza_t{
+  background-color: #43434b;
+  font-family: 'Offside', cursive;
+}
+
+.font{
+  color: white;
+  font-family: 'Offside', cursive;
+}
+.footer{
+  background-color: #43434b;
+  text-align: center; 
+}
