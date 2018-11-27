@@ -12,5 +12,10 @@ Rails.application.routes.draw do
   get 'cipher_text', to: 'home#consultar_cipher'
   get 'firma', to: 'home#signature'
   
-  get 'getKey', to: 'claves#generator'
+  #singup
+  post 'register', to: 'singup_login#register'
+
+  #login
+  post 'log', to: 'singup_login#login'
+
 end
