@@ -1,4 +1,69 @@
-class ClavesController < ApplicationController
+class SingupLoginController < ApplicationController
+    def register
+        session[:current_user_id] = -1
+        reset_session
+        p_k, pr_k = generator()
+        user = User.new(name: params[:user], password: params[:pass], public_key: p_k, private_key: pr_k)
+        if user.valid?
+
+            user.save
+            msg = "Usuario creado"
+            ans = {
+                mensaje: "#{msg}", id: true, pri_k: p_k
+            }
+            session[:current_user_id] = user.id
+
+        else
+
+            msg = 'Usuario ya existe'
+            ans = {
+                mensaje: "#{msg}", id: false
+            }
+
+        end
+
+        render json: ans
+    end
+
+    def login
+        session[:kitchen_id] = -1
+        reset_session
+        usuario = params[:name]
+        pass = params[:pass]
+
+        user = User.find_by(name: name)
+
+        puts user.nil?,user.id
+
+        if user.nil?
+
+            msg = 'Usuario no registrado'
+            ans = {
+                mensaje: "#{msg}", id: 0
+            }
+
+        else
+
+            if user.password == pass
+
+                msg = 'Bienvenido ' + user.name
+                session[:current_user_id] = user.id
+                ans = {
+                    mensaje: "#{msg}", id: 1, pri_k:, user.private_key
+                }
+            else
+                msg = 'contraseña incorrecta'
+                ans = {
+                    mensaje: "#{msg}", id: 0
+                }
+            end
+
+        end
+
+
+        render json: ans
+    end
+    
     def generator
         lis_num = 
         [104369, 104381, 104383, 104393, 104399, 104417, 104459, 104471, 104473, 104479, 104491, 
@@ -46,7 +111,8 @@ class ClavesController < ApplicationController
 
          puts "clave publica #{k_p}" 
          puts "clave privada #{k_pr}"
-         render json: p
+         
+         return k_p, k_pr
     end
 
     def EEA(a,b)
@@ -84,5 +150,4 @@ class ClavesController < ApplicationController
         
     end
 
- 
 end
