@@ -10,11 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_01_022158) do
+ActiveRecord::Schema.define(version: 2018_11_27_032228) do
 
   create_table "inputs", force: :cascade do |t|
     t.string "cipher"
     t.string "tipo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "message"
+    t.string "remitente"
+    t.string "destinatario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password"
+    t.string "public_key"
+    t.string "private_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
