@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'cipher_text', to: 'home#consultar_cipher'
   get 'firma', to: 'home#signature'
   
-  get 'joli', to: 'claves#selector'
+  get 'getKey', to: 'claves#generator'
 end

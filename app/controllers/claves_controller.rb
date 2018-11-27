@@ -1,5 +1,5 @@
 class ClavesController < ApplicationController
-    def selector
+    def generator
         lis_num = 
         [104369, 104381, 104383, 104393, 104399, 104417, 104459, 104471, 104473, 104479, 104491, 
          104513, 104527, 104537, 104543, 104549, 104551, 104561, 104579, 104593, 104597, 104623, 
@@ -34,13 +34,18 @@ class ClavesController < ApplicationController
             temp = fi_n.gcd(e)
          end
 
-         puts "valor de p: #{p}" 
-         puts "valor de q: #{q}"
-         puts "valor de n: #{n}"
-         puts "valor de fi: #{fi_n}"
-         puts "valor de e: #{e}"
+        #  puts "valor de p: #{p}" 
+        #  puts "valor de q: #{q}"
+        #  puts "valor de n: #{n}"
+        #  puts "valor de fi: #{fi_n}"
+        #  puts "valor de e: #{e}"
 
-         EEA(e,fi_n)
+         d = EEA(e,fi_n)
+         k_p = [n,e]
+         k_pr = [n,d]
+
+         puts "clave publica #{k_p}" 
+         puts "clave privada #{k_pr}"
          render json: p
     end
 
@@ -72,8 +77,12 @@ class ClavesController < ApplicationController
             end
             qu = r[0]/r[1]
         end
-
-        puts "a #{s[1]}, b #{t[1]}, r #{r[1]}, qu #{qu} va1 #{ans[0]}, v1 #{ans[1]}"
+        if (ans[1]<0)
+            ans[1] = ans[1] + t[1]
+        end
+        return ans[1]
         
     end
+
+ 
 end
