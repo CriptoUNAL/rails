@@ -29,7 +29,8 @@ class RsaController < ApplicationController
       salida = salida+temp.pack("b*")
 
     end
-    puts salida.length
+    puts salida
+    return salida
   end
 
   def power_mod(mensaje_entero,b,n)
