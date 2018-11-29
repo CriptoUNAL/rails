@@ -12,7 +12,10 @@ class DesController < ApplicationController
 
     render json: ans
   end
-  
+  def ok
+    puts "OKKKKKKKKK"
+  end
+
   def descifrar
     output = params[:output]
     key = params[:key]
