@@ -35,12 +35,24 @@ class Root extends React.Component {
               .then(resp => resp.json())
               //.catch(_ => alert( "Error en el proceso" ))
               .then(data => console.log(data))
-          setTimeout(alert("Al crear un usuario, se aceptan los terminos y condiciones"),4000);
-
+              setTimeout(alert("Al crear un usuario, se aceptan los terminos y condiciones"),4000);
+        }
       }
-          
 
+      listenerLogin(){
+        if (document.getElementById("inputUserame") != null && document.getElementById("inputPassword") != null){
+          const payload = { user: document.getElementById("inputUserame").value, pass: document.getElementById("inputPassword").value }
 
+          //alert(document.getElementById("inputEmail").value);
+          fetch(`log`, {
+              method: "post",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload)
+          })
+              .then(resp => resp.json())
+              //.catch(_ => alert( "Error en el proceso" ))
+              .then(data => alert(data.mensaje))
+      }
       }
       
 
@@ -69,7 +81,7 @@ class Root extends React.Component {
                                     <input type="password" id="inputPassword" className="form-control" placeholder="Password" required></input>
                                     <label htmlFor="inputPassword">Contraseña</label>
                                 </div>
-                                   <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerSignUp} > Login </button>
+                                   <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerLogin} > Login </button>
                                    <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerSignUp} > Sign Up</button>
                             </form>
                         </div>
