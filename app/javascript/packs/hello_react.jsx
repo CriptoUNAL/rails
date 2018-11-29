@@ -150,7 +150,10 @@ class Root extends React.Component {
 
 
     return (
-      <div >
+      <div>
+        <button onClick={window.location.assign("registrarse")}>registrarse</button>
+
+        <div >
         <h1 className="titulo_form" align="center">Empecemos</h1>
 
         <div className="form ">
@@ -199,6 +202,7 @@ class Root extends React.Component {
 
         </div>
         <Lista onBtnUsar={this.listenerBtnUsar.bind(this)} registros={this.state.registros} />
+      </div>
       </div>
     )
   }
