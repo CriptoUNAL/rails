@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   #login
   post 'log', to: 'singup_login#login'
 
+  get 'registrarse', to: 'home#signup'
+
 end
