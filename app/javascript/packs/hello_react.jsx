@@ -151,7 +151,20 @@ class Root extends React.Component {
 
     return (
       <div>
-        <button onClick={window.location.assign("registrarse")}>registrarse</button>
+        <div id="jumbo_ppal" class ="jumbotron">
+      <%= image_tag "1057659.svg", id: "img_barra", style: "width:50px;height:50px;float:left;margin-right:10px" %>
+      <h2 id ="titulo"> Spectre </h2>
+    </div>
+
+    <div id = "jumbito" class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">El valor de la seguridad.</h1>
+        <%= image_tag "1000928.svg", id: "señorcongafas", style: "width:250px;height:250px;float:right;margin-right:10px" %>
+        <p id = "txt_jmb" class="lead">Nuestro algoritmo de cifrado hace incomprensible su información</p>
+        <p id = "txt_jmb" class="lead">a toda persona que no tenga la clave secreta</p>
+      </div>
+    </div>
+        <button onClick={() => window.location.assign("registrarse")}>registrarse</button>
 
         <div >
         <h1 className="titulo_form" align="center">Empecemos</h1>
