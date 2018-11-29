@@ -26,8 +26,8 @@ class SingupLoginController < ApplicationController
     end
 
     def login
-        session[:kitchen_id] = -1
-        reset_session
+        
+        
         usuario = params[:name]
         pass = params[:pass]
 
@@ -49,7 +49,7 @@ class SingupLoginController < ApplicationController
                 msg = 'Bienvenido ' + user.name
                 session[:current_user_id] = user.id
                 ans = {
-                    mensaje: "#{msg}", id: 1, pri_k:, user.private_key
+                    mensaje: "#{msg}", id: 1, pri_k: user.private_key
                 }
             else
                 msg = 'contraseña incorrecta'
