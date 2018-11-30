@@ -17,5 +17,6 @@ Rails.application.routes.draw do
 
   #login
   post 'log', to: 'singup_login#login'
+  post 'firmar', to: "messages#create"
 
 end
