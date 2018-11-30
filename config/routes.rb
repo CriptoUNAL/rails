@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   #login
   post 'log', to: 'singup_login#login'
 
+  #mensajes enviados y recibidos con un contacto
+  post 'chats', to: 'messenger#mensajes'
+
   get 'registrarse', to: 'home#signup'
 
 end
