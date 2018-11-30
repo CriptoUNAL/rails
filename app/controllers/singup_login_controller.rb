@@ -26,14 +26,10 @@ class SingupLoginController < ApplicationController
     end
 
     def login
-        session[:kitchen_id] = -1
-        reset_session
-        usuario = params[:name]
+        usuario = params[:user]
         pass = params[:pass]
 
-        user = User.find_by(name: name)
-
-        puts user.nil?,user.id
+        user = User.find_by(name: usuario)
 
         if user.nil?
 
