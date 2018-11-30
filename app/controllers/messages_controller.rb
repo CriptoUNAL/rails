@@ -1,10 +1,17 @@
 class MessagesController < ApplicationController
 
   def create
-    mensaje = params[:mensaje]
-    user = User.find_by(id:current_user_id)
-    render json: [firmar(user.private_key,mensaje),ver_firma(user.public_key,firmar(user.private_key,""),mensaje)]
+
+    destinatario = User.find_by(name:params[:destinatario])
+    user = User.find_by(id: session[:current_user_id])
+
+    firma = firmar(user.private_key.to_s,params[:mensaje])
+    mensaje = Message.create(message: params[:mensaje],remitente: user.id, destinatario: destinatario.id, firma:firma)
+
+    render json: [mensaje.firma,mensaje.id]#,ver_firma(user.public_key,firmar(user.private_key,""),mensaje)]
   end
+
+
 
   def firmar(clave_privada,mensaje)
     clave_privada = clave_privada.tr_s("[","").tr_s("]","").split(",")
@@ -21,6 +28,7 @@ class MessagesController < ApplicationController
     return firma.to_s.unpack("h*")[0]
 
   end
+
 
   def  ver_firma(clave_publica,resumen,mensaje)
 
