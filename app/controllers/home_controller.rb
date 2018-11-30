@@ -10,4 +10,7 @@ class HomeController < ApplicationController
   def signature
   end
 
+  def signup
+  end
+
 end
