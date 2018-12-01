@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   #create_message
   post 'create', to: "messages#create"
   #comprobar_firma
-  post 'comprobar/:id', to:"messages#comprobar_firma"
+  post 'comprobar/', to:"messages#comprobar_firma"
 
   #mensajes enviados y recibidos con un contacto
   post 'chats/:otra_persona', to: 'messages#chats'

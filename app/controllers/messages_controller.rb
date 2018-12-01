@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   def comprobar_firma
     mensaje = Message.find(params[:id])
     user = User.find(mensaje.remitente)
-    render json: [ver_firma(user.public_key,mensaje.firma,mensaje.message)]
+    render json: { respuesta: ver_firma(user.public_key,mensaje.firma,params[:mensaje])}
   end
 
   def chats
