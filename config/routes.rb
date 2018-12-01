@@ -20,4 +20,7 @@ Rails.application.routes.draw do
 
   get 'registrarse', to: 'home#signup'
 
+  #ChatApp
+  get 'mensajes', to: 'home#messages'
+
 end

@@ -13,4 +13,7 @@ class HomeController < ApplicationController
   def signup
   end
 
+  def messages
+  end
+
 end

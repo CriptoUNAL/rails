@@ -153,7 +153,7 @@ class Root extends React.Component {
       <div>
         
         <button onClick={() => window.location.assign("registrarse")}>registrarse</button>
-
+        <button onClick={() => window.location.assign("mensajes")}>Temporal</button>
         <div >
         <h1 className="titulo_form" align="center">Empecemos</h1>
 
