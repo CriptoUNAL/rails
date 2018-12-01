@@ -31,7 +31,7 @@ class SingupLoginController < ApplicationController
         usuario = params[:user]
         pass = params[:pass]
 
-        user = User.find_by(name: usuario)
+        user = User.find_by(name: params[:name])
 
 
         if user.nil?

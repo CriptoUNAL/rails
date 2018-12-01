@@ -1,4 +1,6 @@
 class CriptoPropioController < ApplicationController
+
+
   def cifrar
     input = params[:input]
     key = params[:key]
