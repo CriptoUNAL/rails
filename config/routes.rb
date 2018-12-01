@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   #mensajes enviados y recibidos con un contacto
   post 'chats/:otra_persona', to: 'messages#chats'
 
+  #editar_mensajes
+  post 'edit/:id', to: 'messages#edit'
+  post 'update', to: 'messages#update'
 
 
 end

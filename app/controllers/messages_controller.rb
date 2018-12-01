@@ -25,14 +25,18 @@ class MessagesController < ApplicationController
     render json: msgs
     #render json: [Message.select(:message,:id).find_by(remitente:session[:current_user_id]),Message.select(:message,:id).find_by(destinatario:session[:current_user_id])]
   end
-
+  @@mensaje = nil
   def edit
-    mensaje = Message.find(params[:id])
-    render json: mensaje
+    @@mensaje = Message.select(:message,:id).find(params[:id])
+    render json: @@mensaje
   end
 
   def update
-
+    puts @@mensaje
+    @@mensaje.message = params[:mensaje]
+    @@mensaje.save
+    render json: "mensaje modificado"
+    @@mensaje = nil
   end
 
   private
