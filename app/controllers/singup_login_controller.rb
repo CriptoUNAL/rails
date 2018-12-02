@@ -27,14 +27,10 @@ class SingupLoginController < ApplicationController
 
     def login
         
-        
-        usuario = params[:name]
+        usuario = params[:user]
         pass = params[:pass]
 
-        user = User.find_by(name: name)
-
-        puts user.nil?,user.id
-
+        user = User.find_by(name: usuario)
         if user.nil?
 
             msg = 'Usuario no registrado'
@@ -43,10 +39,9 @@ class SingupLoginController < ApplicationController
             }
 
         else
-
             if user.password == pass
 
-                msg = 'Bienvenido ' + user.name
+                msg = 'Bienvenido' + user.name
                 session[:current_user_id] = user.id
                 ans = {
                     mensaje: "#{msg}", id: 1, pri_k: user.private_key
