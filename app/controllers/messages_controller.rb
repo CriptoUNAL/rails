@@ -7,13 +7,13 @@ class MessagesController < ApplicationController
     firma = firmar(user.private_key.to_s,params[:mensaje])
     mensaje = Message.create(message: params[:mensaje],remitente: user.id, destinatario: destinatario.id, firma:firma)
 
-    render json: [mensaje.firma,mensaje.id]#,ver_firma(user.public_key,firmar(user.private_key,""),mensaje)]
+    render json: mensaje #,ver_firma(user.public_key,firmar(user.private_key,""),mensaje)]
   end
 
   def comprobar_firma
     mensaje = Message.find(params[:id])
     user = User.find(mensaje.remitente)
-    render json: [ver_firma(user.public_key,mensaje.firma,mensaje.message)]
+    render json: {respuesta: ver_firma(user.public_key,mensaje.firma,params[:mensaje])}
   end
 
   def chats
@@ -30,6 +30,10 @@ class MessagesController < ApplicationController
     @@mensaje = Message.select(:message,:id).find(params[:id])
     render json: @@mensaje
   end
+
+  def all_users
+    render json: User.all.where("id <> ?", session[:current_user_id] )
+  end 
 
   def update
     puts @@mensaje
@@ -48,7 +52,6 @@ class MessagesController < ApplicationController
     resumen = resumen.to_s.unpack("a4a4a4a4a4a4a4a4")
     firma = []
     resumen.each do |i|
-      #debugger
       firma.append(power_mod(i.to_s.to_i(16),clave_privada[1].to_i,clave_privada[0].to_i))
 
     end
