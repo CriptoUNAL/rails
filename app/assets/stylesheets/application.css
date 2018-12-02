@@ -107,6 +107,16 @@ x * compiled file so the styles you add here take precedence over styles defined
   background-color: grey;
 }
 
+#navba{
+  position: absolute;
+  margin-top: 0px;
+}
+
 .jumbotron {
   border-radius: 35px;
+}
+
+.col-lg-6{
+  background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+  border-radius: 20px;
 }

@@ -151,14 +151,19 @@ class Root extends React.Component {
 
     return (
       <div>
-        <div class = "jumbotron">
-        <h1>Bienvenido a la Spectre</h1>
-        <button onClick={() => window.location.assign("registrarse")}>registrarse</button>
-
+        <nav class="navbar">
+            <a  id = " nevi" class="navbar-brand" href="#">
+                <img src="https://image.flaticon.com/icons/png/512/1057/1057659.png" width="30" height="30" class="d-inline-block align-top" alt=""></img>
+                Spectre
+            </a>
+            <button onClick={() => window.location.assign("registrarse")}>ingreso</button>
+        </nav>
+        <div class = "row">
+        <div class = "col-lg-3">
+          .
         </div>
-        <div >
+        <div class = "col-lg-6" >
         <h1 className="titulo_form" align="center">Empecemos</h1>
-
         <div className="form ">
           <div className="row">
             <div className="col">
@@ -182,7 +187,6 @@ class Root extends React.Component {
             <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
               className="form-control" disabled={this.state.input.trim() !== ""} style={{resize: "none"}} />
           </div>
-
           <div className="form-group">
             <label className="titulo_form" htmlFor="key">Elige el algoritmo que deseas utilizar:</label>
             <div className="form-group" id="desplegable">
@@ -191,7 +195,6 @@ class Root extends React.Component {
               </select>
             </div>
           </div>
-
           <div className="text-center">
             <div className="btn-group my-4" >
               <button className="btn btn-primary btn-cripto" onClick={this.listenerConsultar}>
@@ -205,6 +208,10 @@ class Root extends React.Component {
 
         </div>
         <Lista onBtnUsar={this.listenerBtnUsar.bind(this)} registros={this.state.registros} />
+      </div>
+      <div class = "col-lg-3">
+          .
+        </div>
       </div>
       </div>
     )
