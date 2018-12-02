@@ -68,11 +68,11 @@ class Root extends React.Component {
         <div className="col-lg-2">
           .
         </div>
-                <div id = "feto" className="col-lg-8">
+                <div className="col-lg-7s">
                     <div className="card card-signin flex-row my-5">
                         <div className="card-body">
-                            <h2 className="card-title text-center"><strong>Regístrate</strong></h2>
-                            <form className="form-signin">
+                            <h2 id = "fluf" className="card-title text-center"><strong>Ingreso</strong></h2>
+                            <form className="form-signin" onSubmit={() => console.log()}>
                                 <div className="form-label-group">
                                     <input type="text" id="inputUserame" className="form-control" placeholder="Username" required autoFocus></input>
                                     <label htmlFor="inputUserame">Usuario</label>

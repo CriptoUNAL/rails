@@ -99,3 +99,14 @@ x * compiled file so the styles you add here take precedence over styles defined
   background-color: #43434b;
   text-align: center; 
 }
+
+.navbar{
+  font-family: 'Offside', cursive;
+  color: grey;
+  font-style: bold;
+  background-color: grey;
+}
+
+.jumbotron {
+  border-radius: 35px;
+}

@@ -151,9 +151,11 @@ class Root extends React.Component {
 
     return (
       <div>
-        
+        <div class = "jumbotron">
+        <h1>Bienvenido a la Spectre</h1>
         <button onClick={() => window.location.assign("registrarse")}>registrarse</button>
 
+        </div>
         <div >
         <h1 className="titulo_form" align="center">Empecemos</h1>
 
