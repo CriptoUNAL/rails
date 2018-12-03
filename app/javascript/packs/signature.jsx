@@ -9,9 +9,9 @@ function Contactos(props) {
   const contactos = props.contactos.map(contacto => {
     return (
       <li key={contacto.id} className="list-group-item">
-        <button onClick={_ => props.listenerClickContacto(contacto.name)}>
+        <label className= "contactos" onClick={_ => props.listenerClickContacto(contacto.name)}>
           {contacto.name}
-        </button>
+        </label>
       </li>
     )
   })
@@ -25,12 +25,20 @@ function Contactos(props) {
 function Mensajes(props) {
   const mensajes = props.mensajes.map(msn => {
     return (
-      <li key={msn.id} >
-        <p contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
-          onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
-          {msn.message}
-        </p>
-        <button onClick={_ => props.listenerVerificarFirma(msn)}>Verificar firma</button>
+      <li key={msn.id} className="list-group" >
+        <div className="row">
+          <div className="col-10 text-right">
+            <p className="mens" contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
+              onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
+              {msn.message}
+            </p>
+          </div>
+          <div className="col-2 text-right">
+            <button className="btn-ver" onClick={_ => props.listenerVerificarFirma(msn)}>Firma</button>
+          </div>
+        </div>
+
+
       </li>
     )
   })
@@ -44,10 +52,13 @@ function Mensajes(props) {
 function ChatText(props) {
 
   return (
-    <div>
-      <input type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje} />
-      <button onClick={props.listenerEnviar} >Enviar</button>
-    </div>
+    <nav className="navbar">
+    <form className="inputForm">
+       <input className="inputMen" type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje}/>
+      <button type="button" onClick={props.listenerEnviar} >Enviar</button>
+    </form>
+      
+    </nav>
   )
 }
 
@@ -98,7 +109,7 @@ class Root extends React.Component {
         let ans = null;
         if (data.respuesta === true) {
           ans = "El mesaje corresponde al enviado por el remitente."
-        }else {
+        } else {
           ans = "El mesaje esta corrupto."
         }
 
@@ -149,15 +160,21 @@ class Root extends React.Component {
   render() {
 
     return (
-      <div >
-        <h5> Spectre Chat </h5>
-        <a href="/salir"><h5>Salir</h5></a>
-        <div className="row">
-          <div className="col-4">
+      <div className="bodyChat">
+        <nav className="navbar" >
+          <h1> Spectre Chat </h1>
+          <a className="salir text-right" href="/salir"><h5>Salir</h5></a>
+        </nav>
+        <div className="row row-no-padding">
+          <div className="cont col-4">
             <Contactos contactos={this.state.contactos} listenerClickContacto={this.listenerClickContacto} />
           </div>
-          <div className="col-">
-            <div className="row">
+          <div className="col-8">
+          <div className="name">
+              {this.state.currentContact}
+              </div>
+            <div className="buzon container-fluid">
+              
               <Mensajes mensajes={this.state.mensajes} listenerChangeMsn={this.listenerChangeMsn}
                 listenerVerificarFirma={this.listenerVerificarFirma} />
             </div>

@@ -1,0 +1,84 @@
+.bodyChat{
+    position: unset;
+}
+
+.buzon{
+    height: 23rem;
+    overflow: auto;
+    margin-left: 0 !important;
+}
+
+.contactos{
+    width: 100%;
+    font-family: 'Offside', cursive;
+    margin-right: 0 !important;
+}
+
+.cont{
+    height: 30rem;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    padding-right: 0 !important;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+.btn-ver{
+    size: 50%;
+    width: 80%;
+    margin: 3px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Offside', cursive;
+    background-color: #9a9aa5;
+}
+
+.mens{
+    height: 2rem;
+}
+
+.inMensaje{
+    margin-top: 2rem;
+    padding-left: 0 !important;
+}
+
+.inputForm{
+    height: 3rem;
+    width: 100%;
+    margin-top:10px;
+    padding-left: 0 !important;
+}
+
+.inputMen{
+    border-radius: 25px;
+    height: 2.5rem;
+    width: 40rem;
+    margin-right: 1rem;
+    padding-left: 0 !important;
+}
+
+.list-group-item{
+    overflow: auto;
+    background-color: rgb(236, 224, 182);
+    width: 130%;
+}
+
+.name{
+    background-image: linear-gradient(-90deg, #e6daa9, #f1f5bb);
+    height: 3rem;
+    font-size: 2rem;
+    font-family: 'Offside', cursive;
+    padding-left: 0 !important;
+}
+
+
+  .row-no-padding > [class*="col-"] {
+      
+      
+  }
+
+  

@@ -150,8 +150,12 @@ class Root extends React.Component {
 
     return (
       <div >
-        <h5> Spectre Chat </h5>
-        <a href="/salir"><h5>Salir</h5></a>
+        <nav  >
+        <h1> Spectre Chat </h1>
+        <a className= "salir text-right" href="/salir"><h5>Salir</h5></a>
+
+        </nav>
+        
         <div className="row">
           <div className="col-4">
             <Contactos contactos={this.state.contactos} listenerClickContacto={this.listenerClickContacto} />
