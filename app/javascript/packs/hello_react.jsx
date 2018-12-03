@@ -180,18 +180,16 @@ class Root extends React.Component {
             <div className="col">
               <div className="container-reg text-center">
                 <img id="señorcongafas" src="https://image.flaticon.com/icons/svg/1000/1000928.svg" />
-                <button className="btn btn-primary btn-cripto" onClick={() => window.location.assign("registrarse")}>Registrarse</button>
-                <div>
-
-                
+                <div className="row">
+                  .
                 </div>
-
+                <button className="btn btn-primary btn-cripto text-center" onClick={() => window.location.assign("registrarse")}>Registrarse</button>
               </div>
             </div>
             <div className="col">
               <div className="row">
                 <div id="feto" className="col">
-                  <div className="card card-signin flex-row my-5">
+                  <div id="card-login" className="card card-signin flex-row my-5">
                     <div id="feto-login" className="card-body">
                       <h2 className="card-title text-center"><strong>Inicia Sesión</strong></h2>
                       <div className="form form-signin">
