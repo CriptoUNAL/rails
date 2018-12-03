@@ -41,25 +41,6 @@ class Root extends React.Component {
         }
     }
 
-    listenerLogin() {
-        if (document.getElementById("inputUserame") != null && document.getElementById("inputPassword") != null) {
-            const payload = { user: document.getElementById("inputUserame").value, pass: document.getElementById("inputPassword").value }
-
-            //alert(document.getElementById("inputEmail").value);
-            fetch(`log`, {
-                method: "post",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload)
-            })
-                .then(resp => resp.json())
-                //.catch(_ => alert( "Error en el proceso" ))
-                .then(data => {
-                    alert(data.mensaje)
-                    window.location.assign("chat")
-                })
-        }
-    }
-
 
 
     render() {
@@ -68,11 +49,11 @@ class Root extends React.Component {
 
         return (
             <div>
-                <div class="container" id="flo">
+                <div className="container" id="flo">
                     <div className="row">
                         <div className="col-lg-2">
                             .
-        </div>
+                         </div>
                         <div id="feto" className="col-lg-8">
                             <div className="card card-signin flex-row my-5">
                                 <div className="card-body">
@@ -86,7 +67,6 @@ class Root extends React.Component {
                                             <input type="password" id="inputPassword" className="form-control" placeholder="Password" required></input>
                                             <label htmlFor="inputPassword">Contraseña</label>
                                         </div>
-                                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerLogin} > Login </button>
                                         <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerSignUp} > Sign Up</button>
                                     </div>
                                 </div>
@@ -94,7 +74,7 @@ class Root extends React.Component {
                         </div>
                         <div className="col-lg-2">
                             .
-                  </div>
+                        </div>
                     </div>
                 </div>
             </div>

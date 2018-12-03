@@ -142,6 +142,26 @@ class Root extends React.Component {
       .then(registros => this.setState({ registros }))
   }
 
+
+  listenerLogin() {
+    if (document.getElementById("inputUserame") != null && document.getElementById("inputPassword") != null) {
+      const payload = { user: document.getElementById("inputUserame").value, pass: document.getElementById("inputPassword").value }
+
+      //alert(document.getElementById("inputEmail").value);
+      fetch(`log`, {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(resp => resp.json())
+        //.catch(_ => alert( "Error en el proceso" ))
+        .then(data => {
+          alert(data.mensaje)
+          window.location.assign("chat")
+        })
+    }
+  }
+
   render() {
 
     const opcionesAlgorithmos = Algoritmos.map(alg => (
@@ -150,61 +170,114 @@ class Root extends React.Component {
 
 
     return (
-      <div>
-        
-        <button onClick={() => window.location.assign("registrarse")}>registrarse</button>
-        <button onClick={() => window.location.assign("mensajes")}>Temporal</button>
-        <div >
-        <h1 className="titulo_form" align="center">Empecemos</h1>
 
-        <div className="form ">
+      <div>
+        <div>
+
+          <h1 className="tittle"><strong>Spectre</strong></h1>
+
           <div className="row">
             <div className="col">
-              <div className="form-group">
-                <label className="titulo_form" htmlFor="input">Ingresa el texto que deseas encriptar:</label>
-                <textarea name="input" onChange={this.listenerInput} value={this.state.input}
-                  className="form-control" disabled={this.state.output.trim() !== ""} style={{resize: "none"}} />
+              <div className="container-reg text-center">
+                <img id="señorcongafas" src="https://image.flaticon.com/icons/svg/1000/1000928.svg" />
+                <button className="btn btn-primary btn-cripto" onClick={() => window.location.assign("registrarse")}>Registrarse</button>
+                <div>
+
+                
+                </div>
+
               </div>
             </div>
             <div className="col">
-              <div className="form- ">
-                <label className="titulo_form" htmlFor="key">Ingresa la llave(mínimo 16 caracteres):</label>
-                <textarea name="key" onChange={this.listenerKey} value={this.state.key}
-                  className="form-control" style={{resize: "none"}} />
+              <div className="row">
+                <div id="feto" className="col">
+                  <div className="card card-signin flex-row my-5">
+                    <div id="feto-login" className="card-body">
+                      <h2 className="card-title text-center"><strong>Inicia Sesión</strong></h2>
+                      <div className="form form-signin">
+                        <div className="form-group" >
+                          <label htmlFor="inputUserame">Usuario</label>
+                          <input type="text" id="inputUserame" className="form-control" placeholder="Username" required autoFocus></input>
+                        </div>
+                        <div className="form-group">
+                          <label htmlFor="inputPassword">Contraseña</label>
+                          <input type="password" id="inputPassword" className="form-control" placeholder="Password" required></input>
+
+                        </div>
+                        <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerLogin} > Login </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
           </div>
 
-          <div className="form-group">
-            <label className="titulo_form" htmlFor="key">Este es el texto cifrado:</label>
-            <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
-              className="form-control" disabled={this.state.input.trim() !== ""} style={{resize: "none"}} />
-          </div>
 
-          <div className="form-group">
-            <label className="titulo_form" htmlFor="key">Elige el algoritmo que deseas utilizar:</label>
-            <div className="form-group" id="desplegable">
-              <select className="form-control" onChange={this.listenerChangeAlgorithm} value={this.state.alg}>
-                {opcionesAlgorithmos}
-              </select>
-            </div>
-          </div>
+          <button onClick={() => window.location.assign("mensajes")}>Temporal</button>
 
-          <div className="text-center">
-            <div className="btn-group my-4" >
-              <button className="btn btn-primary btn-cripto" onClick={this.listenerConsultar}>
-                Consultar
-              </button>
-              <button className="btn btn-primary btn-cripto" onClick={this.listenerClear}>
-                Limpiar
-              </button>
-            </div>
-          </div>
 
         </div>
-        <Lista onBtnUsar={this.listenerBtnUsar.bind(this)} registros={this.state.registros} />
+        <div className="row justify-content-center">
+
+
+
+          <div className="col-7" >
+            <h3 className="titulo_form" align="center">Empecemos</h3>
+
+            <div className="form ">
+              <div className="row">
+                <div className="col">
+                  <div className="form-group">
+                    <label className="titulo_form" htmlFor="input">Ingresa el texto que deseas encriptar:</label>
+                    <textarea name="input" onChange={this.listenerInput} value={this.state.input}
+                      className="form-control" disabled={this.state.output.trim() !== ""} style={{ resize: "none" }} />
+                  </div>
+                </div>
+                <div className="col">
+                  <div className="form- ">
+                    <label className="titulo_form" htmlFor="key">Ingresa la llave(mínimo 16 caracteres):</label>
+                    <textarea name="key" onChange={this.listenerKey} value={this.state.key}
+                      className="form-control" style={{ resize: "none" }} />
+                  </div>
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label className="titulo_form" htmlFor="key">Este es el texto cifrado:</label>
+                <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
+                  className="form-control" disabled={this.state.input.trim() !== ""} style={{ resize: "none" }} />
+              </div>
+
+              <div className="form-group">
+                <label className="titulo_form" htmlFor="key">Elige el algoritmo que deseas utilizar:</label>
+                <div className="form-group" id="desplegable">
+                  <select className="form-control" onChange={this.listenerChangeAlgorithm} value={this.state.alg}>
+                    {opcionesAlgorithmos}
+                  </select>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <div className="btn-group my-4" >
+                  <button className="btn btn-primary btn-cripto" onClick={this.listenerConsultar}>
+                    Consultar
+      </button>
+                  <button className="btn btn-primary btn-cripto" onClick={this.listenerClear}>
+                    Limpiar
+      </button>
+                </div>
+              </div>
+
+            </div>
+            <Lista onBtnUsar={this.listenerBtnUsar.bind(this)} registros={this.state.registros} />
+          </div>
+        </div>
+
       </div>
-      </div>
+
+
     )
   }
 }

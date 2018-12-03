@@ -16,7 +16,7 @@ function Contactos(props) {
     )
   })
   return (
-    <ul class="list-group">
+    <ul className="list-group">
       {contactos}
     </ul>
   )
@@ -35,7 +35,7 @@ function Mensajes(props) {
     )
   })
   return (
-    <ul class="list-group">
+    <ul className="list-group">
       {mensajes}
     </ul>
   )

@@ -104,7 +104,28 @@
   }
   
 
+
 #feto{
     color: grey;
     font-family: 'Offside', cursive;
 }
+
+
+.form-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-group input {
+  border-radius: 2rem;
+}
+
+#feto-login{
+  color: white;
+  font-family: 'Offside', cursive;
+  background-color:#43434b; 
+}
+
+
+
+
