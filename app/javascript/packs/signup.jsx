@@ -59,13 +59,7 @@ class Root extends React.Component {
                 })
         }
     }
-
-
-
     render() {
-
-
-
         return (
             <div>
                 <div class="container" id="flo">
@@ -82,8 +76,16 @@ class Root extends React.Component {
                                     <input type="text" id="inputUserame" className="form-control" placeholder="Username" required autoFocus></input>
                                     <label htmlFor="inputUserame">Usuario</label>
                                 </div>
+                                            <div className="form-label-group">
+                                                <input type="password" id="inputPassword" className="form-control" placeholder="Password" required></input>
+                                                <label htmlFor="inputPassword">Contraseña</label>
+                                            </div>
+                                            <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerLogin} > Login </button>
+                                            <button className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerSignUp} > Sign Up</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
                         <div className="col-lg-2">
                             .
                   </div>

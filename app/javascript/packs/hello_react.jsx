@@ -14,18 +14,18 @@ function Lista(props) {
       <td className="font">{registro.cipher}</td>
       <td className="font">{Algoritmos.find(e => e.id === registro.tipo).nombre}</td>
       <td>
-        <button onClick={_ => props.onBtnUsar(registro)} className="btn btn-primary btn-cripto">Usar</button>
+        <button id = "usar" onClick={_ => props.onBtnUsar(registro)} className="btn btn-primary btn-cripto">Usar</button>
       </td>
     </tr>
   ))
 
   return (
-    <table className="table">
+    <table className="table" bgcolor = "fffff">
       <thead id="cabeza_t">
         <tr>
           <th className="font">id</th>
           <th className="font">Ciphertext</th>
-          <th className="font">Algoritmo</th>
+          <th className="font">Algoritmo utilizado</th>
           <th></th>
         </tr>
       </thead>
@@ -151,69 +151,99 @@ class Root extends React.Component {
 
     return (
       <div>
-        <nav class="navbar">
-            <a  id = " nevi" class="navbar-brand" href="#">
-                <img src="https://image.flaticon.com/icons/png/512/1057/1057659.png" width="30" height="30" class="d-inline-block align-top" alt=""></img>
-                Spectre
-            </a>
-            <button onClick={() => window.location.assign("registrarse")}>ingreso</button>
-        </nav>
-        <div class = "row">
-        <div class = "col-lg-3">
-          .
-        </div>
-        <div class = "col-lg-6" >
-        <h1 className="titulo_form" align="center">Empecemos</h1>
-        <div className="form ">
-          <div className="row">
-            <div className="col">
-              <div className="form-group">
-                <label className="titulo_form" htmlFor="input">Ingresa el texto que deseas encriptar:</label>
-                <textarea name="input" onChange={this.listenerInput} value={this.state.input}
-                  className="form-control" disabled={this.state.output.trim() !== ""} style={{resize: "none"}} />
-              </div>
+        <img id = "log" src="https://image.flaticon.com/icons/png/512/1057/1057659.png" width="70" height="70" class="d-inline-block align-top" alt=""></img>
+        <h1 id = "rela">Spectre</h1>
+        <button id = "ingreso" onClick={() => window.location.assign("registrarse")}>Ingreso</button>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <div class = "row">
+            <div class = "col-lg-6">
+                <div id = "sty" class = "container">
+                  <h5>.</h5>
+                </div>
             </div>
-            <div className="col">
-              <div className="form- ">
+            <div class = "col-lg-6">
+                <div id = "le" class = "container">
+                  <h5>.</h5>
+                </div>
+            </div>
+          </div>
+          <br></br>
+             <img id = "texta" src="https://image.flaticon.com/icons/svg/1000/1000929.svg" width="35" height="35" class="img-rounded" alt=""></img>
+             <img id = "keya" src="https://image.flaticon.com/icons/svg/1000/1000943.svg" width="35" height="35" class="d-inline-block align-top" alt=""></img>
+             <img id = "alga" src="https://image.flaticon.com/icons/svg/1000/1000921.svg" width="35" height="35" class="d-inline-block align-top" alt=""></img>
+          <br></br>
+          <br></br>
+      <div class="row">
+        <div id = "first" class = "col-lg-3" >
+            <div className="form-group">
+                    <label className="titulo_form" htmlFor="input">Ingresa el texto que deseas encriptar:</label>
+                    <textarea name="input" onChange={this.listenerInput} value={this.state.input}
+                      className="form-control" disabled={this.state.output.trim() !== ""} style={{resize: "none"}} />
+            </div>
+          </div>
+     
+          <div id = "second" class = "col-lg-3" >
+             <div className="form- ">
                 <label className="titulo_form" htmlFor="key">Ingresa la llave(mínimo 16 caracteres):</label>
                 <textarea name="key" onChange={this.listenerKey} value={this.state.key}
                   className="form-control" style={{resize: "none"}} />
               </div>
+          </div>
+ 
+          <div id = "third" class = "col-lg-3" >
+            <div className="form-group">
+              <label className="titulo_form" htmlFor="key">Elige el algoritmo que deseas utilizar:</label>
+              <div className="form-group" id="desplegable">
+                <select className="form-control" onChange={this.listenerChangeAlgorithm} value={this.state.alg}>
+                  {opcionesAlgorithmos}
+                </select>
+              </div>
             </div>
-          </div>
-
-          <div className="form-group">
-            <label className="titulo_form" htmlFor="key">Este es el texto cifrado:</label>
-            <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
-              className="form-control" disabled={this.state.input.trim() !== ""} style={{resize: "none"}} />
-          </div>
-          <div className="form-group">
-            <label className="titulo_form" htmlFor="key">Elige el algoritmo que deseas utilizar:</label>
-            <div className="form-group" id="desplegable">
-              <select className="form-control" onChange={this.listenerChangeAlgorithm} value={this.state.alg}>
-                {opcionesAlgorithmos}
-              </select>
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="btn-group my-4" >
-              <button className="btn btn-primary btn-cripto" onClick={this.listenerConsultar}>
+            <button id = "freela" className="btn btn-primary" onClick={this.listenerConsultar}>
                 Consultar
-              </button>
-              <button className="btn btn-primary btn-cripto" onClick={this.listenerClear}>
+            </button>
+          </div>
+        </div>
+        <br></br>
+        <br></br>
+        <div class = "row">
+        <div  class = "col-lg-3">
+
+        </div>
+        <div id = "fourth" class = "col-lg-6">
+        
+        <div className="form-group">
+              <label className="titulo_form" htmlFor="key">Este es el texto cifrado:</label>
+              <textarea name="output" onChange={this.listenerOutput} value={this.state.output}
+                className="form-control" disabled={this.state.input.trim() !== ""} style={{resize: "none"}} />
+            <br></br>
+            </div>
+              
+              <button id = "ncer" className="btn btn-primary" onClick={this.listenerClear}>
                 Limpiar
               </button>
-            </div>
-          </div>
+        </div>
+        <div  class = "col-lg-3">
+        </div>
 
         </div>
+        <br></br>
+        <br></br>
         <Lista onBtnUsar={this.listenerBtnUsar.bind(this)} registros={this.state.registros} />
-      </div>
-      <div class = "col-lg-3">
-          .
+        <br></br>
+        <br></br>
+        <div class = "container-fluid footer">
+            <p id = "footer"> © 2018 Copyright: Spectre Algorithm, all rights reserved </p>
         </div>
-      </div>
-      </div>
+      </div> 
+      
+
     )
   }
 }
