@@ -142,6 +142,26 @@ class Root extends React.Component {
       .then(registros => this.setState({ registros }))
   }
 
+
+  listenerLogin() {
+    if (document.getElementById("inputUserame") != null && document.getElementById("inputPassword") != null) {
+      const payload = { user: document.getElementById("inputUserame").value, pass: document.getElementById("inputPassword").value }
+
+      //alert(document.getElementById("inputEmail").value);
+      fetch(`log`, {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(resp => resp.json())
+        //.catch(_ => alert( "Error en el proceso" ))
+        .then(data => {
+          alert(data.mensaje)
+          window.location.assign("chat")
+        })
+    }
+  }
+
   render() {
 
     const opcionesAlgorithmos = Algoritmos.map(alg => (
@@ -150,6 +170,7 @@ class Root extends React.Component {
 
 
     return (
+
       <div>
         <img id = "log" src="https://image.flaticon.com/icons/png/512/1057/1057659.png" width="70" height="70" class="d-inline-block align-top" alt=""></img>
         <h1 id = "rela">Spectre</h1>

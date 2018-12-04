@@ -2,9 +2,10 @@
   "name": "react",
   "private": true,
   "dependencies": {
+    "@pusher/chatkit": "^0.7.18",
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
-    "popper.js": "^1.14.6",
+    "chatkit": "0.0.1-security",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"

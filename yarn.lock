@@ -2,6 +2,14 @@
 # yarn lockfile v1
 
 
+"@pusher/chatkit@^0.7.18":
+  version "0.7.18"
+  resolved "https://registry.yarnpkg.com/@pusher/chatkit/-/chatkit-0.7.18.tgz#7c239cfa76728a9382bb94bb1c8ddc91fdf6ce37"
+  integrity sha512-8dAOTpRO1+7euFocyPmwWwphYP2ligINqJiUKuz6G30RstWrjWWvHCtImmemgPVJh7aprfuVJyYGO+k8O9mQ/w==
+  dependencies:
+    pusher-platform "^0.15.2"
+    ramda "^0.25.0"
+
 "@rails/webpacker@3.5":
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-3.5.5.tgz#8911c66bcefc8bc6b91270e92f0d39e3c2d43116"
@@ -1357,6 +1365,11 @@ chalk@^2.0.1, chalk@^2.4.1:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
+
+chatkit@0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/chatkit/-/chatkit-0.0.1-security.tgz#7d47949aa4920c68d0659de764c8f77634ece6fe"
+  integrity sha1-fUeUmqSSDGjQZZ3nZMj3djTs5v4=
 
 chokidar@^2.0.0, chokidar@^2.0.2:
   version "2.0.4"
@@ -5334,6 +5347,11 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
+pusher-platform@^0.15.2:
+  version "0.15.4"
+  resolved "https://registry.yarnpkg.com/pusher-platform/-/pusher-platform-0.15.4.tgz#0b177ff43fc598e04aac72a627acd95feac16f53"
+  integrity sha512-dvPfh56f+CVpdgHMKstlH7jCafNcs+veK0XyggWojUZsycdHJ+MwE0v5AtDhLGj7nT0a88m+UwA+8dFUqVE3OA==
+
 q@^1.1.2:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
@@ -5371,6 +5389,11 @@ querystringify@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.0.0.tgz#fa3ed6e68eb15159457c89b37bc6472833195755"
   integrity sha512-eTPo5t/4bgaMNZxyjWx6N2a6AuE0mq51KWvpc7nU/MAqixcI6v6KrGUKES0HaomdnolQBBXU/++X6/QQ9KL4tw==
+
+ramda@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.25.0.tgz#8fdf68231cffa90bc2f9460390a0cb74a29b29a9"
+  integrity sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
 
 randomatic@^3.0.0:
   version "3.1.0"

@@ -16,6 +16,12 @@ x * compiled file so the styles you add here take precedence over styles defined
   color: white;
 }
 
+.tittle{
+  color: white;
+  position: static;
+  font-family: 'Offside', cursive;
+  font-size: 500%;
+}
  #jumbo_ppal{
   background-color: white;
   border-width: 20px;  

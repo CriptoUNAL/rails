@@ -36,4 +36,7 @@ Rails.application.routes.draw do
   post 'update', to: 'messages#update'
 
 
+  #ChatApp
+  get 'mensajes', to: 'home#messages'
+
 end

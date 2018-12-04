@@ -1,0 +1,101 @@
+.bodyChat{
+    position: unset;
+    margin: 0fr !important;
+    padding: -29999;
+}
+
+.buzon{
+    height: 23rem;
+    overflow: auto;
+    margin-left: -1 !important;
+}
+
+.contactos{
+    width: 100%;
+    font-family: 'Offside', cursive;
+    margin-right: -1 !important;
+}
+
+.cont{
+    height: 28rem;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    padding: -1 !important;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+.btn-ver{
+    size: 50%;
+    width: 80%;
+    margin: 3px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Offside', cursive;
+    background-color: #9a9aa5;
+}
+
+.mens{
+    background-color: #00adff;
+    color: white;
+    border-radius: 15px;
+    justify-content: center;
+    position: right ;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.inMensaje{
+    margin-top: 2rem;
+}
+
+.inputForm{
+    height: 3rem;
+    width: 100%;
+    margin-top:10px;
+}
+
+.inputMen{
+    border-radius: 25px;
+    height: 2.3rem;
+    width: 40rem;
+    margin-right: 1rem;
+    padding: 10px;
+    justify-content: center;
+    
+}
+
+.list-group-item{
+    overflow: auto;
+    background-color: #00adff;
+    padding-left: -10rem !important;
+}
+
+.name{
+    background-color: #92d8dd;
+    height: 3rem;
+    font-size: 2rem;
+    font-family: 'Offside', cursive;
+    padding-left: -1 !important;
+}
+
+.navbar{
+    background-image: linear-gradient(-90deg, #00f0ff, #00adff);
+}
+
+.col-4{
+    margin: 0 !important;
+    padding: -100000;
+}
+
+.col-8{
+    margin: 0 !important;
+    padding: -100000;
+}
+
+
+  
