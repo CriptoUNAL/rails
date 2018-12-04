@@ -8,6 +8,7 @@
     height: 23rem;
     overflow: auto;
     margin-left: -1 !important;
+    background-color:rgba(211,211,211,0.6);
 }
 
 .contactos{
@@ -17,7 +18,7 @@
 }
 
 .cont{
-    height: 28rem;
+    height: 26.5rem;
     overflow-y:scroll;
     overflow-x: hidden;
     padding: -1 !important;
@@ -62,7 +63,7 @@
 .inputMen{
     border-radius: 25px;
     height: 2.3rem;
-    width: 40rem;
+    width: 38rem;
     margin-right: 1rem;
     padding: 10px;
     justify-content: center;
@@ -76,16 +77,37 @@
 }
 
 .name{
-    background-color: #92d8dd;
-    height: 3rem;
-    font-size: 2rem;
+    line-height: 50px;
     font-family: 'Offside', cursive;
-    padding-left: -1 !important;
+    background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+    border-top-right-radius: 20px;
+    padding: 10px;
+    max-height: 50px;
+    min-height: 50px;
 }
 
-.navbar{
-    background-image: linear-gradient(-90deg, #00f0ff, #00adff);
+.izqu{
+    line-height: 50px;
+    font-family: 'Offside', cursive;
+    background-image: linear-gradient(-90deg, #00f0ff,  #00adff);
+    border-top-left-radius: 20px;
+    padding: 10px;
+    max-height: 50px;
+    min-height: 50px;
 }
+
+
+#userrow{
+    max-height: 50px;
+    background-color: red;
+}
+
+#userrow2{
+    max-height: 50px;
+    background-color: yellow;
+}
+
+
 
 .col-4{
     margin: 0 !important;
@@ -98,4 +120,33 @@
 }
 
 
-  
+  #username{
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 25px;
+    line-height: 25px;
+    color: white;
+    font-family: 'Offside', cursive;
+    padding-left: 20px;
+  }
+
+  #flef{
+        letter-spacing: 1px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        background-color: #F5F5F5;
+        border-color: white;
+        color: black;
+        font-family: 'Offside', cursive;
+        padding: 3px;
+        font-size: 80%;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+  #relle{
+    background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+    max-width: 730px; 
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }

@@ -16,12 +16,13 @@ x * compiled file so the styles you add here take precedence over styles defined
   color: white;
 }
 
-.tittle{
+.tittle{ 
   color: white;
   position: static;
   font-family: 'Offside', cursive;
   font-size: 500%;
 }
+
  #jumbo_ppal{
   background-color: white;
   border-width: 20px;  
@@ -199,6 +200,7 @@ x * compiled file so the styles you add here take precedence over styles defined
   margin-top: 25px;
   margin-left: 32em;
 }
+
 #rela{
   position: absolute;
   margin-top: 90px;

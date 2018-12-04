@@ -53,13 +53,13 @@ function Mensajes(props) {
 function ChatText(props) {
 
   return (
-    <nav className="navbar">
+    <div id = "relle" class = "container-fluid">
       <form className="inputForm">
         <input className="inputMen" type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje} />
-        <button type="button" onClick={props.listenerEnviar} >Enviar</button>
+        <button id = "flef" type="button" onClick={props.listenerEnviar} >Enviar</button>
       </form>
 
-    </nav>
+    </div>
   )
 }
 
@@ -161,21 +161,42 @@ class Root extends React.Component {
   render() {
 
     return (
+      <div>
+        <img id = "log" src="https://image.flaticon.com/icons/png/512/1057/1057659.png" width="70" height="70" class="d-inline-block align-top" alt=""></img>
+        <h1 id = "rela">Chat</h1>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <button id = "ingreso" href="/salir">Salir</button>
+
+
+
       <div className="bodyChat">
-        <nav className="navbar" >
-          <h1> Spectre Chat </h1>
-          <a className="salir text-right" href="/salir"><h5>Salir</h5></a>
-        </nav>
-        <nav className="row" >
+        <div id ="userrow" className="row" >
             <div className="col-4">
-              <h2>Nombre de usuario</h2>
+             <div className = "izqu" >
+             ,
+             </div>
             </div>
             <div className="col-8">
-              <div className="name">
-                {this.state.currentContact}
-              </div>
+            <div className="name">
+                  <div class = "row">
+                  <div classs = "col-6">
+                  </div>
+                  <div class = "col-6">
+                  <div id = "username" class = "container">
+                  .
+                    {this.state.currentContact}
+                  </div>
+                  </div>  
+                  </div>
             </div>
-        </nav>
+          </div>
+        </div>
+
+
+
         <div className="row row-no-padding">
           <div className="cont col-4">
             <Contactos contactos={this.state.contactos} listenerClickContacto={this.listenerClickContacto} />
@@ -192,6 +213,7 @@ class Root extends React.Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     )
   }
