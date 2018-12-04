@@ -153,7 +153,7 @@ class Root extends React.Component {
       <div>
         <img id = "log" src="https://image.flaticon.com/icons/png/512/1057/1057659.png" width="70" height="70" class="d-inline-block align-top" alt=""></img>
         <h1 id = "rela">Spectre</h1>
-        <button id = "ingreso" onClick={() => window.location.assign("registrarse")}>Spectre</button>
+        <button id = "ingreso" onClick={() => window.location.assign("registrarse")}>Ingreso</button>
           <br></br>
           <br></br>
           <br></br>
