@@ -9,7 +9,7 @@ function Contactos(props) {
   const contactos = props.contactos.map(contacto => {
     return (
       <li key={contacto.id} className="list-group-item">
-        <label className= "contactos" onClick={_ => props.listenerClickContacto(contacto.name)}>
+        <label className="contactos" onClick={_ => props.listenerClickContacto(contacto.name)}>
           {contacto.name}
         </label>
       </li>
@@ -27,7 +27,8 @@ function Mensajes(props) {
     return (
       <li key={msn.id} className="list-group" >
         <div className="row">
-          <div className="col-10 text-right">
+          <div className="col-5" />
+          <div className="col-5 text-right">
             <p className="mens" contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
               onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
               {msn.message}
@@ -53,11 +54,11 @@ function ChatText(props) {
 
   return (
     <nav className="navbar">
-    <form className="inputForm">
-       <input className="inputMen" type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje}/>
-      <button type="button" onClick={props.listenerEnviar} >Enviar</button>
-    </form>
-      
+      <form className="inputForm">
+        <input className="inputMen" type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje} />
+        <button type="button" onClick={props.listenerEnviar} >Enviar</button>
+      </form>
+
     </nav>
   )
 }
@@ -165,16 +166,24 @@ class Root extends React.Component {
           <h1> Spectre Chat </h1>
           <a className="salir text-right" href="/salir"><h5>Salir</h5></a>
         </nav>
+        <nav className="row" >
+            <div className="col-4">
+              <h2>Nombre de usuario</h2>
+            </div>
+            <div className="col-8">
+              <div className="name">
+                {this.state.currentContact}
+              </div>
+            </div>
+        </nav>
         <div className="row row-no-padding">
           <div className="cont col-4">
             <Contactos contactos={this.state.contactos} listenerClickContacto={this.listenerClickContacto} />
           </div>
           <div className="col-8">
-          <div className="name">
-              {this.state.currentContact}
-              </div>
+
             <div className="buzon container-fluid">
-              
+
               <Mensajes mensajes={this.state.mensajes} listenerChangeMsn={this.listenerChangeMsn}
                 listenerVerificarFirma={this.listenerVerificarFirma} />
             </div>
