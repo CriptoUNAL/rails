@@ -11,12 +11,17 @@
     background-color:rgba(211,211,211,0.6);
 }
 
-.contactos{
-    width: 100%;
-    font-family: 'Offside', cursive;
-    margin-right: -1 !important;
-}
 
+#lsts{
+    background-color: rgba(211,211,211,0.6);
+    line-height: 20px;  
+    padding-top: 20px;
+    text-align:center;
+    font-family: 'Offside', cursive;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    font-weight: 500;
+}
 .cont{
     height: 23rem;
     overflow-y:scroll;
@@ -33,11 +38,12 @@
     size: 50%;
     width: 80%;
     margin: 3px;
-    font-weight: 700;
     letter-spacing: 1px;
-    text-transform: uppercase;
     font-family: 'Offside', cursive;
-    background-color: #9a9aa5;
+    background-color: #F5F5F5;
+    border-color: white;
+    color: black;
+    border-radius: 20px;
 }
 
 .mens{
@@ -51,6 +57,8 @@
     position: right ;
     padding: 10px;
     font-size: 17px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
 }
 
 .inMensaje{
@@ -89,6 +97,16 @@
     min-height: 50px;
 }
 
+.dot {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    margin-top: -5px;
+  }
+
 .izqu{
     line-height: 50px;
     font-family: 'Offside', cursive;
@@ -103,6 +121,7 @@
     font-family: 'Offside', cursive;
     background-image: linear-gradient(-90deg, #00f0ff,  #00adff);
     border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     padding: 10px;
     max-height: 50px;
     min-height: 50px;
@@ -134,16 +153,19 @@
 }
 
 
-  #username{
-    border-width: 1px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 25px;
-    line-height: 25px;
+  .username{
+    line-height: 30px;
     color: white;
     font-family: 'Offside', cursive;
     padding-left: 20px;
+    font-size: 150%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
+
 
   #usernames{
     border-width: 1px;
@@ -184,4 +206,42 @@
     border-bottom-left-radius: 20px;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
     margin-top: -10px;
+  }
+
+  #long{
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 2em;
+  }
+
+  #longe{
+    position: absolute;
+    margin-left: 5px;
+  }
+
+
+  #relax{
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 100px;
+    font-family: 'Offside', cursive;
+    color: grey;
+  }
+
+  #ingresoz{
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border-color: white;
+    background-image: linear-gradient(-90deg, #D0D0D0	, #F5F5F5);
+    color: grey;
+    font-family: 'Offside', cursive;
+    position: absolute;
+    font-size: 80%;
+    margin-left: 1050px;
+    margin-top: -55px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+  #lele{
+      min-width: 160px;
   }

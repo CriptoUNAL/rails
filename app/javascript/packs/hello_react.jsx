@@ -185,12 +185,12 @@ class Root extends React.Component {
           <div class = "row">
             <div class = "col-lg-6">
                 <div id = "sty" class = "container">
-                  <h5>.</h5>
+                  <br></br>
                 </div>
             </div>
             <div class = "col-lg-6">
                 <div id = "le" class = "container">
-                  <h5>.</h5>
+                <br></br>
                 </div>
             </div>
           </div>
