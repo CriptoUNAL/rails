@@ -41,7 +41,7 @@ class SingupLoginController < ApplicationController
         else
             if user.password == pass
 
-                msg = 'Bienvenido' + user.name
+                msg = 'Bienvenido ' + user.name
                 session[:current_user_id] = user.id
                 ans = {
                     mensaje: "#{msg}", id: 1, pri_k: user.private_key

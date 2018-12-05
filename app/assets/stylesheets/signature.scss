@@ -18,7 +18,7 @@
 }
 
 .cont{
-    height: 26.5rem;
+    height: 23rem;
     overflow-y:scroll;
     overflow-x: hidden;
     padding: -1 !important;
@@ -41,9 +41,12 @@
 }
 
 .mens{
-    background-color: #00adff;
+    display: inline-block;
+    background-color: #40a4df;
     color: white;
-    border-radius: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     justify-content: center;
     position: right ;
     padding: 10px;
@@ -95,16 +98,27 @@
     max-height: 50px;
     min-height: 50px;
 }
-
-
-#userrow{
+.izqe{
+    line-height: 80 px;
+    font-family: 'Offside', cursive;
+    background-image: linear-gradient(-90deg, #00f0ff,  #00adff);
+    border-bottom-left-radius: 20px;
+    padding: 10px;
     max-height: 50px;
-    background-color: red;
+    min-height: 50px;
+    padding: 10px;
 }
 
-#userrow2{
-    max-height: 50px;
-    background-color: yellow;
+.padding-l{
+    padding-left: 0px;
+}
+
+.padding-r{
+    padding-right:0px;
+}
+
+#ref{
+    background-color: aqua;
 }
 
 
@@ -131,6 +145,17 @@
     padding-left: 20px;
   }
 
+  #usernames{
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 25px;
+    line-height: 35px;
+    color: white;
+    font-family: 'Offside', cursive;
+    padding-left: 20px;
+  }
+
   #flef{
         letter-spacing: 1px;
         border-radius: 10px;
@@ -146,7 +171,17 @@
 
   #relle{
     background-image: linear-gradient(-90deg, #00adff, #00f0ff);
-    max-width: 730px; 
+    max-width: 745px; 
     border-bottom-right-radius: 20px;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+
+  #rellen{
+    background-image: linear-gradient(-90deg, #00f0ff, #00adff);
+    min-width: 300px; 
+    min-height: 57px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    margin-top: -10px;
   }
