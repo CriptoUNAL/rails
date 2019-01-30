@@ -168,7 +168,7 @@ class Root extends React.Component {
         <br></br>
         <br></br>
         <br></br>
-        <a id = "ingresoz" href="/salir">Salir</a>
+        <a id = "ingresoz" href="/getout">Salir</a>
            <div class = "row">
             <div class = "col-lg-6">
                 <div id = "sty" class = "container">

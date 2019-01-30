@@ -10,6 +10,11 @@ class MessagesController < ApplicationController
     render json: mensaje #,ver_firma(user.public_key,firmar(user.private_key,""),mensaje)]
   end
 
+  def deletess
+    session.delete(:current_user_id)
+    redirect_to root_path
+  end
+  
   def comprobar_firma
     mensaje = Message.find(params[:id])
     user = User.find(mensaje.remitente)
@@ -99,4 +104,6 @@ class MessagesController < ApplicationController
     end
     return z
   end
+
+
 end
