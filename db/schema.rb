@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2018_11_30_170648) do
 
   create_table "messages", force: :cascade do |t|
     t.string "message"
-    t.integer "remitente"
-    t.integer "destinatario"
+    t.string "remitente"
+    t.string "destinatario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "firma"
