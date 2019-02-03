@@ -24,8 +24,8 @@ class MessagesController < ApplicationController
   def chats
     #recibe el emisor y al receptor para buscar los mensajes que se han enviado entre ellos
     other_user = User.find_by(name:params[:otra_persona])
-    msgs = Message.all.where('remitente = ? AND destinatario = ?', session[:current_user_id], other_user.id)
-    msgs += Message.all.where('remitente = ? AND destinatario = ?', other_user.id ,session[:current_user_id])
+    msgs = Message.all.where('remitente = ? AND destinatario = ?', session[:current_user_id].to_s, other_user.id.to_s)
+    msgs += Message.all.where('remitente = ? AND destinatario = ?', other_user.id.to_s ,session[:current_user_id].to_s)
     msgs = msgs.sort
     render json: msgs
     #render json: [Message.select(:message,:id).find_by(remitente:session[:current_user_id]),Message.select(:message,:id).find_by(destinatario:session[:current_user_id])]
