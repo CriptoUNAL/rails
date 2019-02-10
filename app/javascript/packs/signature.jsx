@@ -8,8 +8,8 @@ import ReactDOM from 'react-dom'
 function Contactos(props) {
   const contactos = props.contactos.map(contacto => {
     return (
-      <li id = "lsts" key={contacto.id} className="list-group-item">
-        <label className="contactos" onClick={_ => props.listenerClickContacto(contacto.name)}>
+      <li id = "lsts" key={contacto.id} className="list-group-item" onClick={_ => props.listenerClickContacto(contacto.name)} >
+        <label className="contactos">
           {contacto.name}
         </label>
       </li>
@@ -168,7 +168,7 @@ class Root extends React.Component {
         <br></br>
         <br></br>
         <br></br>
-        <button id = "ingresoz" href="/salir">Salir</button>
+        <a id = "ingresoz" href="/getout">Salir</a>
            <div class = "row">
             <div class = "col-lg-6">
                 <div id = "sty" class = "container">

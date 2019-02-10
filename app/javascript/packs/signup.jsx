@@ -72,7 +72,7 @@ class Root extends React.Component {
                     <div id = "feto" className="col-lg-4">
                         <div className="card card-signin flex-row my-5">
                             <div className="card-body">
-                                <form className="form-signin">
+                                <div className="form-signin">
                                     <div className="form-label-group">
                                         <input type="text" id="inputUserame" className="form-control" placeholder="Username" required autoFocus></input>
                                         <label htmlFor="inputUserame">Usuario</label>
@@ -83,7 +83,7 @@ class Root extends React.Component {
                                                 </div>
                                                 <button id = "buton" className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerLogin} > Login </button>
                                                 <button id = "buton2" className="btn btn-lg btn-primary btn-block text-uppercase" type="submit" onClick={this.listenerSignUp} > Sign Up</button>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
