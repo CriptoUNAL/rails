@@ -4,11 +4,47 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { MDBDataTable } from 'mdbreact';
 import { Algoritmos } from './application'
 
 function Lista(props) {
 
   const lista = props.registros.map((registro, id) => (
+  //   const data = {
+  //   columns: [
+  //           {
+  //             label: 'id',
+  //             field: 'id',
+  //             sort: 'asc',
+  //             width: 150
+  //           },
+  //           {
+  //             label: 'Ciphertext',
+  //             field: 'ciphertext',
+  //             sort: 'asc',
+  //             width: 270
+  //           },
+  //           {
+  //             label: 'Algoritmo utilizado',
+  //             field: 'algoritmo',
+  //             sort: 'asc',
+  //             width: 200
+  //           },
+  //           {
+  //             label: 'empty',
+  //             field: 'empty',
+  //             sort: 'asc',
+  //             width: 200
+  //           },
+  //         ],
+  //   rows: [
+  //     {
+  //       id : {registro.id}
+  //     },
+  //   ]
+  // }
+
+
     <tr key={id}>
       <td className="font">{registro.id}</td>
       <td className="font">{registro.cipher}</td>
@@ -20,7 +56,8 @@ function Lista(props) {
   ))
 
   return (
-    <table className="table" bgcolor = "fffff">
+    <div>
+    {/* <table className="table" bgcolor = "fffff">
       <thead id="cabeza_t">
         <tr>
           <th className="font">id</th>
@@ -32,7 +69,27 @@ function Lista(props) {
       <tbody>
         {lista}
       </tbody>
-    </table>
+    </table>  */}
+
+    <MDBDataTable
+      striped
+      bordered
+      hover
+      sorting = {false}
+      searching = {false}
+      data={lista}
+    /> 
+
+    {/* <nav>
+      <ul class = "pagination justify-content-end">
+        <li><a class = "page-link" href="#">Previous</a></li>
+        <li><a class = "page-link" href="#">1</a></li>
+        <li><a class = "page-link" href="#">2</a></li>
+        <li><a class = "page-link" href="#">3</a></li>
+        <li><a class = "page-link" href="#">Next</a></li>
+      </ul>
+    </nav>  */}
+    </div>
   )
 }
 
@@ -282,3 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // document.body.appendChild(document.createElement('div')),
   )
 })
+
+
+console.clear();
