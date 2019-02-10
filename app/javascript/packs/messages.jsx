@@ -8,15 +8,15 @@ import ReactDOM from 'react-dom'
 function Contactos(props) {
   const contactos = props.contactos.map(contacto => {
     return (
-      <li id = "lsts" key={contacto.id} className="list-group-item" onClick={_ => props.listenerClickContacto(contacto.name)} >
-        <label className="contactos">
+      <li key={contacto.id} className="list-group-item">
+        <button onClick={_ => props.listenerClickContacto(contacto.name)}>
           {contacto.name}
-        </label>
+        </button>
       </li>
     )
   })
   return (
-    <ul className="list-group">
+    <ul class="list-group">
       {contactos}
     </ul>
   )
@@ -25,26 +25,17 @@ function Contactos(props) {
 function Mensajes(props) {
   const mensajes = props.mensajes.map(msn => {
     return (
-      <li key={msn.id} className="list-group" >
-        <div className="row">
-          <div className="col-5" />
-          <div className="col-5 text-right">
-            <p className="mens" contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
-              onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
-              {msn.message}
-            </p>
-          </div>
-          <div className="col-2 text-right">
-            <button className="btn-ver" onClick={_ => props.listenerVerificarFirma(msn)}>firma</button>
-          </div>
-        </div>
-
-
+      <li key={msn.id} >
+        <p contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
+          onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
+          {msn.message}
+        </p>
+        <button onClick={_ => props.listenerVerificarFirma(msn)}>Verificar firma</button>
       </li>
     )
   })
   return (
-    <ul className="list-group">
+    <ul class="list-group">
       {mensajes}
     </ul>
   )
@@ -53,12 +44,9 @@ function Mensajes(props) {
 function ChatText(props) {
 
   return (
-    <div id = "relle" class = "container-fluid">
-      <form className="inputForm">
-        <input className="inputMen" type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje} />
-        <button id = "flef" type="button" onClick={props.listenerEnviar} >Enviar</button>
-      </form>
-
+    <div>
+      <input type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje} />
+      <button onClick={props.listenerEnviar} >Enviar</button>
     </div>
   )
 }
@@ -109,9 +97,9 @@ class Root extends React.Component {
       .then(data => {
         let ans = null;
         if (data.respuesta === true) {
-          ans = "El mensaje corresponde al enviado por el remitente."
-        } else {
-          ans = "El mensaje esta corrupto."
+          ans = "El mesaje corresponde al enviado por el remitente."
+        }else {
+          ans = "El mesaje esta corrupto."
         }
 
         alert(ans);
@@ -161,90 +149,31 @@ class Root extends React.Component {
   render() {
 
     return (
-      <div>
-        <img id = "long" src="https://image.flaticon.com/icons/svg/868/868128.svg" width="50" height="50" class="d-inline-block align-top" alt=""></img>
-        <h3 id = "relax"> Spectre Chat</h3>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <a id = "ingresoz" href="/getout">Salir</a>
-           <div class = "row">
-            <div class = "col-lg-6">
-                <div id = "sty" class = "container">
-                  <br></br>
-                </div>
-            </div>
-            <div class = "col-lg-6">
-                <div id = "le" class = "container">
-                <br></br>
-                </div>
-            </div>
-          </div>
-          <br></br>
-      <div className="bodyChat">
-        <div id ="userrow" className="row" >
-            <div className="col-4 padding r">
-             <div className = "izqu" >
-             <span class="dot"></span>
-             <img id = "longe" src="https://image.flaticon.com/icons/svg/747/747545.svg" width="30" height="30" class="d-inline-block align-top" alt=""></img>
-             </div>
-            </div>
-            <div className="col-8 padding-l">
-            <div className="name">
-                  <div class = "row">
-                  <div id = "lele" classs = "col-6">
-                  <br></br>
-                  </div>
-                  <div class = "col-6">
-                  <div class = "username">
-                    <p>{this.state.currentContact}</p>
-                  </div>
-                  </div>  
-                  </div>
-            </div>
-          </div>
-        </div>
+      <div >
+        <nav  >
+        <h1> Spectre Chat </h1>
+        <a className= "salir text-right" href="/getout"><h5>Salir</h5></a>
 
+        </nav>
+        
         <div className="row">
-          <div className="cont col-4 padding-r">
+          <div className="col-4">
             <Contactos contactos={this.state.contactos} listenerClickContacto={this.listenerClickContacto} />
           </div>
-          <div className="col-8 padding-l">
-
-            <div className="buzon container-fluid ">
-
+          <div className="col-">
+            <div className="row">
               <Mensajes mensajes={this.state.mensajes} listenerChangeMsn={this.listenerChangeMsn}
                 listenerVerificarFirma={this.listenerVerificarFirma} />
             </div>
-           
-          </div>
-        </div>
-
-         <div className="row">
-          <div className="cont col-4 padding-r">
-          <div id = "rellen" class = "container-fluid">
-              <form className="inputForm">
-              </form>
-              </div>
-          </div>
-          <div className="col-8 padding-l">
-
-           <div className="row">
+            <div className="row">
               <ChatText listenerEnviar={this.listenerEnviar} mensaje={this.state.mensaje} listenerCambioMensaje={this.listenerCambioMensaje} />
+            </div>
           </div>
-           
-          </div>
-        </div>
-      </div>
-      <div class = "container-fluid footer">
-            <p id = "footer"> © 2018 Copyright: Spectre Algorithm, all rights reserved </p>
         </div>
       </div>
     )
   }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(

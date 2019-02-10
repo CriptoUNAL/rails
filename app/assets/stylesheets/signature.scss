@@ -1,0 +1,248 @@
+.bodyChat{
+    position: unset;
+    margin: 0fr !important;
+    padding: -29999;
+}
+
+.buzon{
+    height: 23rem;
+    overflow: auto;
+    margin-left: -1 !important;
+    background-color:rgba(211,211,211,0.6);
+}
+
+
+#lsts{
+    background-color: rgba(211,211,211,0.6);
+    line-height: 20px;  
+    padding-top: 20px;
+    text-align:center;
+    font-family: 'Offside', cursive;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    font-weight: 500;
+}
+.cont{
+    height: 23rem;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    padding: -1 !important;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+.btn-ver{
+    size: 50%;
+    width: 80%;
+    margin: 3px;
+    letter-spacing: 1px;
+    font-family: 'Offside', cursive;
+    background-color: #F5F5F5;
+    border-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+.mens{
+    display: inline-block;
+    background-color: #40a4df;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    justify-content: center;
+    position: right ;
+    padding: 10px;
+    font-size: 17px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    width: 15em;
+
+}
+
+.inMensaje{
+    margin-top: 2rem;
+}
+
+.inputForm{
+    height: 3rem;
+    width: 100%;
+    margin-top:10px;
+}
+
+.inputMen{
+    border-radius: 25px;
+    height: 2.3rem;
+    width: 38rem;
+    margin-right: 1rem;
+    padding: 10px;
+    justify-content: center;
+    
+}
+
+.list-group-item{
+    overflow: auto;
+    background-color: #00adff;
+    padding-left: -10rem !important;
+}
+
+.name{
+    line-height: 50px;
+    font-family: 'Offside', cursive;
+    background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+    border-top-right-radius: 20px;
+    padding: 10px;
+    max-height: 50px;
+    min-height: 50px;
+}
+
+.dot {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    margin-top: -5px;
+  }
+
+.izqu{
+    line-height: 50px;
+    font-family: 'Offside', cursive;
+    background-image: linear-gradient(-90deg, #00f0ff,  #00adff);
+    border-top-left-radius: 20px;
+    padding: 10px;
+    max-height: 50px;
+    min-height: 50px;
+}
+.izqe{
+    line-height: 80 px;
+    font-family: 'Offside', cursive;
+    background-image: linear-gradient(-90deg, #00f0ff,  #00adff);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px;
+    max-height: 50px;
+    min-height: 50px;
+    padding: 10px;
+}
+
+.padding-l{
+    padding-left: 0px;
+}
+
+.padding-r{
+    padding-right:0px;
+}
+
+#ref{
+    background-color: aqua;
+}
+
+
+
+.col-4{
+    margin: 0 !important;
+    padding: -100000;
+}
+
+.col-8{
+    margin: 0 !important;
+    padding: -100000;
+}
+
+
+  .username{
+    line-height: 30px;
+    color: white;
+    font-family: 'Offside', cursive;
+    padding-left: 20px;
+    font-size: 150%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+
+  #usernames{
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 25px;
+    line-height: 35px;
+    color: white;
+    font-family: 'Offside', cursive;
+    padding-left: 20px;
+  }
+
+  #flef{
+        letter-spacing: 1px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        background-color: #F5F5F5;
+        border-color: white;
+        color: black;
+        font-family: 'Offside', cursive;
+        padding: 3px;
+        font-size: 80%;
+        box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+  #relle{
+    background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+    max-width: 745px; 
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+
+  #rellen{
+    background-image: linear-gradient(-90deg, #00f0ff, #00adff);
+    min-width: 300px; 
+    min-height: 57px;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    margin-top: -10px;
+  }
+
+  #long{
+    position: absolute;
+    margin-top: 25px;
+    margin-left: 2em;
+  }
+
+  #longe{
+    position: absolute;
+    margin-left: 5px;
+  }
+
+
+  #relax{
+    position: absolute;
+    margin-top: 35px;
+    margin-left: 100px;
+    font-family: 'Offside', cursive;
+    color: grey;
+  }
+
+  #ingresoz{
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border-color: white;
+    background-image: linear-gradient(-90deg, #D0D0D0	, #F5F5F5);
+    color: grey;
+    font-family: 'Offside', cursive;
+    position: absolute;
+    font-size: 80%;
+    margin-left: 1050px;
+    margin-top: -55px;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+
+  #lele{
+      min-width: 160px;
+  }

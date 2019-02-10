@@ -16,8 +16,5 @@ export const Algoritmos = [
     id: "des",
     nombre: "DES",
   },
-  { 
-    id: "rsa",
-    nombre: "Firma Digital",
-  }
+
 ]
