@@ -98,6 +98,9 @@ class Root extends React.Component {
     if (this.state.key.trim() == "") {
       alert("Debe tener la llave")
       return;
+    }else if(this.state.key.trim().length < 16){
+      alert("La llave debe tener minimo 16 caracteres")
+
     }
 
     if (this.state.input.trim() == "" && this.state.output.trim() == "") {
@@ -205,7 +208,8 @@ class Root extends React.Component {
             <div className="form-group">
                     <label className="titulo_form" htmlFor="input">Ingresa el texto que deseas encriptar:</label>
                     <textarea name="input" onChange={this.listenerInput} value={this.state.input}
-                      className="form-control" disabled={this.state.output.trim() !== ""} style={{resize: "none"}} />
+                      className="form-control" disabled={this.state.output.trim() !== ""} style={{resize: "none"}} 
+                      maxLength="1000" placeholder="Máximo 1000 caracteres..."/>
             </div>
           </div>
      
@@ -213,7 +217,9 @@ class Root extends React.Component {
              <div className="form- ">
                 <label className="titulo_form" htmlFor="key">Ingresa la llave(mínimo 16 caracteres):</label>
                 <textarea name="key" onChange={this.listenerKey} value={this.state.key}
-                  className="form-control" style={{resize: "none"}} />
+                  className="form-control" style={{resize: "none"}}
+                  placeholder="Minimo 16 caracteres, máximo 20" maxLength="20" minLength="16" 
+                  title="Minimo 16 caracteres y maximo 20" />
               </div>
           </div>
  
