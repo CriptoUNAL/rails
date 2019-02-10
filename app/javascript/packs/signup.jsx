@@ -16,15 +16,27 @@ class Root extends React.Component {
         super(props)
 
         this.listenerSignUp = this.listenerSignUp.bind(this)
+        this.listenerLogin = this.listenerLogin.bind(this)
     }
 
-    componentWillMount() {
+    testPayload(payload){
+        if(!payload.user || payload.user.lenght < 2 || payload.user.lenght > 20)
+            return false
+        else if(!payload.pass || payload.pass.lenght < 2 || payload.pass.lenght > 20)
+            return false
+        else
+            return true;
     }
 
     listenerSignUp(e) {
 
         if (document.getElementById("inputUserame") != null && document.getElementById("inputPassword") != null) {
             const payload = { user: document.getElementById("inputUserame").value, pass: document.getElementById("inputPassword").value }
+
+            if(!this.testPayload(payload)){
+                alert("Los campos deben ser minimo de 2 y maximo de 20.")
+                return
+            }
 
             //alert(document.getElementById("inputEmail").value);
             fetch(`register`, {
@@ -44,7 +56,11 @@ class Root extends React.Component {
     listenerLogin() {
         if (document.getElementById("inputUserame") != null && document.getElementById("inputPassword") != null) {
             const payload = { user: document.getElementById("inputUserame").value, pass: document.getElementById("inputPassword").value }
-
+            
+            if(!this.testPayload(payload)){
+                alert("Los campos deben ser minimo de 2 y maximo de 20.")
+                return
+            }
             //alert(document.getElementById("inputEmail").value);
             fetch(`log`, {
                 method: "post",
