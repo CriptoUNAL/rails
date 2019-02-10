@@ -152,7 +152,7 @@ class Root extends React.Component {
       <div >
         <nav  >
         <h1> Spectre Chat </h1>
-        <a className= "salir text-right" href="/salir"><h5>Salir</h5></a>
+        <a className= "salir text-right" href="/getout"><h5>Salir</h5></a>
 
         </nav>
         

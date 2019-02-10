@@ -12,13 +12,17 @@ x * compiled file so the styles you add here take precedence over styles defined
  *= require_tree .
  *= require_self
  */
+.h5{
+  color: white;
+}
 
-.tittle{
+.tittle{ 
   color: white;
   position: static;
   font-family: 'Offside', cursive;
   font-size: 500%;
 }
+
  #jumbo_ppal{
   background-color: white;
   border-width: 20px;  
@@ -26,37 +30,9 @@ x * compiled file so the styles you add here take precedence over styles defined
   text-align: left;
 }
 
- #titulo{
-   color: #00adff;
-   margin-top: 24px;
-   margin-left: 55px;
-   font-family: 'Offside', cursive;
-   font-size: 30px;
-   font-style: bold;
- }
-
- #texto{
-  color: black;
-  margin-top: 10px;
-  font-family: 'Offside', cursive;
-  font-size: 30px;
-}
-
-#img_barra{
-  margin-left: 90px;
-  margin-top: 15px;
-}
-
-#jumbito{
-  padding: 150px;
-  text-align: left;
-}
-
-#señorcongafas{
-  right: 80px;
-  top: 210px;
-  width: 300px;
-  padding: 10px;
+.table{
+  border-radius: 15px;
+  color: red;
 }
  
 #txt_jmb{
@@ -77,34 +53,178 @@ x * compiled file so the styles you add here take precedence over styles defined
   background-image: linear-gradient(-90deg, #00adff, #00f0ff);
 }
 
-.titulo_form{
+  .titulo_form{
+    font-family: 'Offside', cursive;
+    color: grey;
+    margin-top: 20px;
+    font-weight: 80%;
+  }
+
+#freela{
+  letter-spacing: 1px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-color: #F5F5F5;
+  border-color: white;
+  color: black;
   font-family: 'Offside', cursive;
-  color: white;
-  margin-top: 24px;
+  position: absolute;
+  margin-top: -10px;
+  margin-left:150px;
+  font-size: 80%;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
-.btn-cripto {
-  font-weight: 700;
+#ncer{
   letter-spacing: 1px;
+  border-radius: 10px;
   text-transform: uppercase;
+  background-color: #F5F5F5;
+  border-color: white;
+  color: black;
   font-family: 'Offside', cursive;
-  background-color: #43434b;
+  position: absolute;
+  margin-top: -35px;
+  margin-left:455px;
+  font-size: 80%;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+#usar{
+  letter-spacing: 1px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  background-image: linear-gradient(-90deg, #D0D0D0	, #F5F5F5);
+  border-color: white;
+  color: black;
+  font-family: 'Offside', cursive;
+  position: absolute;
+  font-size: 80%;
+  margin-left: -100px;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+#ingreso{
+  letter-spacing: 1px;
+  border-radius: 10px;
+  border-color: white;
+  background-image: linear-gradient(-90deg, #D0D0D0	, #F5F5F5);
+  color: grey;
+  font-family: 'Offside', cursive;
+  position: absolute;
+  font-size: 80%;
+  margin-left: 1150px;
+  margin-top: 10px;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+
+
+#sty{
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(#00adff));
+  max-height: 2px;
+  position: absolute;
+  margin-left: 3em;
+}
+#le{
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#00adff), to(transparent));
+  max-height: 2px;
 }
 
 #cabeza_t{
-  background-color: #43434b;
+  background-image: linear-gradient(-90deg, #00adff, #00f0ff);
   font-family: 'Offside', cursive;
+  color: white
 }
 
 .font{
-  color: white;
+  color: #43434b;
   font-family: 'Offside', cursive;
 }
 .footer{
-  background-color: #43434b;
-  text-align: center; 
+  text-align: center;
+  color: #43434b; 
 }
 
-.container-reg{
-  padding: 2rem;
+.navbar{
+  font-family: 'Offside', cursive;
+  color: grey;
+  font-style: bold;
+  background-color: grey;
 }
+
+#navba{
+  position: absolute;
+  margin-top: 0px;
+}
+
+.jumbotron {
+  border-radius: 35px;
+}
+
+#first, #second, #third, #fourth{
+  /* background-image: linear-gradient(-90deg, #D0D0D0	, #F5F5F5); */
+  background-image: linear-gradient(-90deg, #00adff, #00f0ff);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+
+}
+
+
+#first{
+  margin-left: 70px;
+}
+
+#second{
+  margin-left: 80px;
+}
+
+#third{
+  margin-left: 80px;
+  align-content: center;
+  align-items: center;
+}
+
+
+.textarea{
+  background-color: transparent;  
+}
+
+#footer{
+  font-family: 'Offside', cursive;
+  color: grey;
+}
+
+#log{
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 32em;
+}
+
+#rela{
+  position: absolute;
+  margin-top: 90px;
+  margin-left: 470px;
+  font-family: 'Offside', cursive;
+  color: grey;
+}
+
+#melo{
+  background-color: red;
+}
+
+#texta{
+ position: absolute;
+ margin-left: 173px;
+}
+
+#keya{
+  position: absolute;
+  margin-left: 545px;
+ }
+
+ #alga{
+  position: absolute;
+  margin-left: 920px;
+ }
+

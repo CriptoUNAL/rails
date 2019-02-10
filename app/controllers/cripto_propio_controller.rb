@@ -4,6 +4,11 @@ class CriptoPropioController < ApplicationController
   def cifrar
     input = params[:input]
     key = params[:key]
+    if input.length > 1000 || key.length > 20 || key.length < 16
+      ans = {msg: "Parametros de cifrado errorneos"}
+      render json: ans
+      return;
+    end
     output = breaking(input, key)
     c_t_temp = mostrar(output)
     temp = Input.create(cipher:c_t_temp, tipo:"inventado")
@@ -18,6 +23,11 @@ class CriptoPropioController < ApplicationController
   def descifrar
     output = params[:output]
     key = params[:key]
+    if output.length > 1000 || key.length > 20 || key.length < 16
+      ans = {msg: "Parametros de descifrado errorneos"}
+      render json: ans
+      return;
+    end
     out_temp = output.force_encoding("UTF-8").encode("ISO-8859-1")
     output_l = breaking_des(out_temp, key)
     c_t_temp = mostrar(output_l)

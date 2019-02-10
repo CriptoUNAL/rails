@@ -11,10 +11,7 @@ class HomeController < ApplicationController
     redirect_to registrarse_path unless session[:current_user_id]
   end
 
-  def salir
-    session.delete(:current_user_id)
-    redirect_to registrarse_path
-  end
+
 
   def signup
   end

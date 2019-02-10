@@ -10,6 +10,11 @@ class MessagesController < ApplicationController
     render json: mensaje #,ver_firma(user.public_key,firmar(user.private_key,""),mensaje)]
   end
 
+  def deletess
+    session.delete(:current_user_id)
+    redirect_to root_path
+  end
+  
   def comprobar_firma
     mensaje = Message.find(params[:id])
     user = User.find(mensaje.remitente)
@@ -19,8 +24,8 @@ class MessagesController < ApplicationController
   def chats
     #recibe el emisor y al receptor para buscar los mensajes que se han enviado entre ellos
     other_user = User.find_by(name:params[:otra_persona])
-    msgs = Message.all.where('remitente = ? AND destinatario = ?', session[:current_user_id], other_user.id)
-    msgs += Message.all.where('remitente = ? AND destinatario = ?', other_user.id ,session[:current_user_id])
+    msgs = Message.all.where('remitente = ? AND destinatario = ?', session[:current_user_id].to_s, other_user.id.to_s)
+    msgs += Message.all.where('remitente = ? AND destinatario = ?', other_user.id.to_s ,session[:current_user_id].to_s)
     msgs = msgs.sort
     render json: msgs
     #render json: [Message.select(:message,:id).find_by(remitente:session[:current_user_id]),Message.select(:message,:id).find_by(destinatario:session[:current_user_id])]
@@ -99,4 +104,6 @@ class MessagesController < ApplicationController
     end
     return z
   end
+
+
 end

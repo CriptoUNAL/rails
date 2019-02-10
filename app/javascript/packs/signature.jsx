@@ -8,8 +8,8 @@ import ReactDOM from 'react-dom'
 function Contactos(props) {
   const contactos = props.contactos.map(contacto => {
     return (
-      <li key={contacto.id} className="list-group-item">
-        <label className="contactos" onClick={_ => props.listenerClickContacto(contacto.name)}>
+      <li id = "lsts" key={contacto.id} className="list-group-item" onClick={_ => props.listenerClickContacto(contacto.name)} >
+        <label className="contactos">
           {contacto.name}
         </label>
       </li>
@@ -35,7 +35,7 @@ function Mensajes(props) {
             </p>
           </div>
           <div className="col-2 text-right">
-            <button className="btn-ver" onClick={_ => props.listenerVerificarFirma(msn)}>Firma</button>
+            <button className="btn-ver" onClick={_ => props.listenerVerificarFirma(msn)}>firma</button>
           </div>
         </div>
 
@@ -53,13 +53,13 @@ function Mensajes(props) {
 function ChatText(props) {
 
   return (
-    <nav className="navbar">
+    <div id = "relle" class = "container-fluid">
       <form className="inputForm">
         <input className="inputMen" type="text" name="mensaje" id="mensaje" value={props.mensaje} onChange={props.listenerCambioMensaje} />
-        <button type="button" onClick={props.listenerEnviar} >Enviar</button>
+        <button id = "flef" type="button" onClick={props.listenerEnviar} >Enviar</button>
       </form>
 
-    </nav>
+    </div>
   )
 }
 
@@ -109,9 +109,9 @@ class Root extends React.Component {
       .then(data => {
         let ans = null;
         if (data.respuesta === true) {
-          ans = "El mesaje corresponde al enviado por el remitente."
+          ans = "El mensaje corresponde al enviado por el remitente."
         } else {
-          ans = "El mesaje esta corrupto."
+          ans = "El mensaje esta corrupto."
         }
 
         alert(ans);
@@ -161,41 +161,90 @@ class Root extends React.Component {
   render() {
 
     return (
+      <div>
+        <img id = "long" src="https://image.flaticon.com/icons/svg/868/868128.svg" width="50" height="50" class="d-inline-block align-top" alt=""></img>
+        <h3 id = "relax"> Spectre Chat</h3>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <a id = "ingresoz" href="/getout">Salir</a>
+           <div class = "row">
+            <div class = "col-lg-6">
+                <div id = "sty" class = "container">
+                  <br></br>
+                </div>
+            </div>
+            <div class = "col-lg-6">
+                <div id = "le" class = "container">
+                <br></br>
+                </div>
+            </div>
+          </div>
+          <br></br>
       <div className="bodyChat">
-        <nav className="navbar" >
-          <h1> Spectre Chat </h1>
-          <a className="salir text-right" href="/salir"><h5>Salir</h5></a>
-        </nav>
-        <nav className="row" >
-            <div className="col-4">
-              <h2>Nombre de usuario</h2>
+        <div id ="userrow" className="row" >
+            <div className="col-4 padding r">
+             <div className = "izqu" >
+             <span class="dot"></span>
+             <img id = "longe" src="https://image.flaticon.com/icons/svg/747/747545.svg" width="30" height="30" class="d-inline-block align-top" alt=""></img>
+             </div>
             </div>
-            <div className="col-8">
-              <div className="name">
-                {this.state.currentContact}
-              </div>
+            <div className="col-8 padding-l">
+            <div className="name">
+                  <div class = "row">
+                  <div id = "lele" classs = "col-6">
+                  <br></br>
+                  </div>
+                  <div class = "col-6">
+                  <div class = "username">
+                    <p>{this.state.currentContact}</p>
+                  </div>
+                  </div>  
+                  </div>
             </div>
-        </nav>
-        <div className="row row-no-padding">
-          <div className="cont col-4">
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="cont col-4 padding-r">
             <Contactos contactos={this.state.contactos} listenerClickContacto={this.listenerClickContacto} />
           </div>
-          <div className="col-8">
+          <div className="col-8 padding-l">
 
-            <div className="buzon container-fluid">
+            <div className="buzon container-fluid ">
 
               <Mensajes mensajes={this.state.mensajes} listenerChangeMsn={this.listenerChangeMsn}
                 listenerVerificarFirma={this.listenerVerificarFirma} />
             </div>
-            <div className="row">
-              <ChatText listenerEnviar={this.listenerEnviar} mensaje={this.state.mensaje} listenerCambioMensaje={this.listenerCambioMensaje} />
-            </div>
+           
           </div>
+        </div>
+
+         <div className="row">
+          <div className="cont col-4 padding-r">
+          <div id = "rellen" class = "container-fluid">
+              <form className="inputForm">
+              </form>
+              </div>
+          </div>
+          <div className="col-8 padding-l">
+
+           <div className="row">
+              <ChatText listenerEnviar={this.listenerEnviar} mensaje={this.state.mensaje} listenerCambioMensaje={this.listenerCambioMensaje} />
+          </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class = "container-fluid footer">
+            <p id = "footer"> © 2018 Copyright: Spectre Algorithm, all rights reserved </p>
         </div>
       </div>
     )
   }
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
