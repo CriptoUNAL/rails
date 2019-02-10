@@ -3,6 +3,13 @@ class DesController < ApplicationController
   def cifrar
     input = params[:input]
     key = params[:key]
+
+    if input.length > 1000 || key.length > 20 || key.length < 16
+      ans = {msg: "Parametros de cifrado errorneos"}
+      render json: ans
+      return;
+    end
+    
     output = init(input,key,true)
 
     temp = Input.create(cipher: output, tipo:"des")
@@ -19,6 +26,12 @@ class DesController < ApplicationController
   def descifrar
     output = params[:output]
     key = params[:key]
+
+    if out.aaaput.length > 1000 || key.length > 20 || key.length < 16
+      ans = {msg: "Parametros de descifrado errorneos"}
+      render json: ans
+      return;
+    end
     
     output = init(output,key,false)
     ans = {
