@@ -30,6 +30,12 @@ class MessagesController < ApplicationController
     render json: msgs
     #render json: [Message.select(:message,:id).find_by(remitente:session[:current_user_id]),Message.select(:message,:id).find_by(destinatario:session[:current_user_id])]
   end
+
+  def usid
+    name = params[:nombre]
+    other_user = User.find_by(name: name)
+    render json: {uss: other_user}
+  end
   @@mensaje = nil
   def edit
     @@mensaje = Message.select(:message,:id).find(params[:id])

@@ -40,4 +40,7 @@ Rails.application.routes.draw do
   #ChatApp
   get 'mensajes', to: 'home#messages'
 
+  #usuario
+  post 'uss', to: 'messages#usid'
+
 end

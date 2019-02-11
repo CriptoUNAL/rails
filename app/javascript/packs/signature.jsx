@@ -24,24 +24,53 @@ function Contactos(props) {
 
 function Mensajes(props) {
   const mensajes = props.mensajes.map(msn => {
-    return (
-      <li key={msn.id} className="list-group" >
-        <div className="row">
-          <div className="col-5" />
-          <div className="col-5 text-right">
-            <p className="mens" contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
-              onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
-              {msn.message}
-            </p>
+    console.log(msn.remitente)
+    console.log(props.uss)
+    if(msn.remitente == props.uss){
+      return (
+        <li key={msn.id} className="list-group" >
+          <div className="row">
+            <div className="col-5 text-left">
+              <p className="mens" contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
+                onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
+                {msn.message}
+              </p>
+            </div>
+            <div className="col-5 text-right">
+              
+            </div>
+            <div className="col-2 text-right">
+              <button className="btn-ver" onClick={_ => props.listenerVerificarFirma(msn)}>firma</button>
+            </div>
           </div>
-          <div className="col-2 text-right">
-            <button className="btn-ver" onClick={_ => props.listenerVerificarFirma(msn)}>firma</button>
+  
+  
+        </li>
+      )
+    }else{
+      return (
+        <li key={msn.id} className="list-group" >
+          <div className="row">
+            <div className="col-5 text-left">
+  
+            </div>
+            <div className="col-5 text-right">
+              <p className="mens" contentEditable={true} onInput={e => props.listenerChangeMsn(e.target.innerText, msn.id)}
+                onBlur={e => { props.listenerChangeMsn(e.target.innerText, msn.id) }}>
+                {msn.message}
+              </p>
+            </div>
+            <div className="col-2 text-right">
+              <button className="btn-ver" onClick={_ => props.listenerVerificarFirma(msn)}>firma</button>
+            </div>
           </div>
-        </div>
+  
+  
+        </li>
+      )
+    }
 
-
-      </li>
-    )
+    
   })
   return (
     <ul className="list-group">
@@ -133,7 +162,18 @@ class Root extends React.Component {
     fetch(`chats/${user}`)
       .then(data => data.json())
       .then(mensajes => this.setState({ mensajes, currentContact: user }))
+    
 
+      const payload = {
+        nombre: user
+      }
+    fetch(`uss`,{
+      method: "post",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(data => data.json())
+      .then(mensajes => this.setState({ currentContactid: mensajes.uss.id }))
   }
 
   listenerEnviar() {
@@ -215,7 +255,7 @@ class Root extends React.Component {
             <div className="buzon container-fluid ">
 
               <Mensajes mensajes={this.state.mensajes} listenerChangeMsn={this.listenerChangeMsn}
-                listenerVerificarFirma={this.listenerVerificarFirma} />
+                listenerVerificarFirma={this.listenerVerificarFirma} uss={this.state.currentContactid}/>
             </div>
            
           </div>

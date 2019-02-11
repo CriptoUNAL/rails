@@ -161,7 +161,7 @@ class Root extends React.Component {
             <Contactos contactos={this.state.contactos} listenerClickContacto={this.listenerClickContacto} />
           </div>
           <div className="col-">
-            <div className="row">
+            <div id= "mesengger" className="row">
               <Mensajes mensajes={this.state.mensajes} listenerChangeMsn={this.listenerChangeMsn}
                 listenerVerificarFirma={this.listenerVerificarFirma} />
             </div>
