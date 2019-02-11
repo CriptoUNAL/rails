@@ -8,74 +8,52 @@ import { MDBDataTable } from 'mdbreact';
 import { Algoritmos } from './application'
 
 function Lista(props) {
+  const column = [
+              {
+                label: 'id',
+                field: 'id',
+                sort: 'asc',
+                width: 150
+              },
+              {
+                label: 'Ciphertext',
+                field: 'ciphertext',
+                sort: 'asc',
+                width: 270
+              },
+              {
+                label: 'Algoritmo utilizado',
+                field: 'algoritmo',
+                sort: 'asc',
+                width: 200
+              },
+              {
+                label: 'empty',
+                field: 'empty',
+                sort: 'asc',
+                width: 200
+              },
+            ]
 
-  const lista = props.registros.map((registro, id) => (
-  //   const data = {
-  //   columns: [
-  //           {
-  //             label: 'id',
-  //             field: 'id',
-  //             sort: 'asc',
-  //             width: 150
-  //           },
-  //           {
-  //             label: 'Ciphertext',
-  //             field: 'ciphertext',
-  //             sort: 'asc',
-  //             width: 270
-  //           },
-  //           {
-  //             label: 'Algoritmo utilizado',
-  //             field: 'algoritmo',
-  //             sort: 'asc',
-  //             width: 200
-  //           },
-  //           {
-  //             label: 'empty',
-  //             field: 'empty',
-  //             sort: 'asc',
-  //             width: 200
-  //           },
-  //         ],
-  //   rows: [
-  //     {
-  //       id : {registro.id}
-  //     },
-  //   ]
-  // }
+  const row = props.registros.map((registro,idd) => (
+    
+      {
+        id : idd,
+        cipher: registro.cipher,
+        algo: Algoritmos.find(e => e.id === registro.tipo).nombre,
+        but: <button id = "usar" onClick={_ => props.onBtnUsar(registro)} className="btn btn-primary btn-cripto">Usar</button>
 
+      }))
 
-    <tr key={id}>
-      <td className="font">{registro.id}</td>
-      <td className="font">{registro.cipher}</td>
-      <td className="font">{Algoritmos.find(e => e.id === registro.tipo).nombre}</td>
-      <td>
-        <button id = "usar" onClick={_ => props.onBtnUsar(registro)} className="btn btn-primary btn-cripto">Usar</button>
-      </td>
-    </tr>
-  ))
-
+  const lista = {columns: column, rows: row}
   return (
     <div>
-    {/* <table className="table" bgcolor = "fffff">
-      <thead id="cabeza_t">
-        <tr>
-          <th className="font">id</th>
-          <th className="font">Ciphertext</th>
-          <th className="font">Algoritmo utilizado</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {lista}
-      </tbody>
-    </table>  */}
 
     <MDBDataTable
       striped
       bordered
       hover
-      sorting = {false}
+      sorting = {"false"}
       searching = {false}
       data={lista}
     /> 
