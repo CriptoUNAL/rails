@@ -6,6 +6,7 @@
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
     "chatkit": "0.0.1-security",
+    "mdbreact": "^4.10.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"

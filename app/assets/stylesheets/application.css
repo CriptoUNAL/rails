@@ -100,7 +100,7 @@ x * compiled file so the styles you add here take precedence over styles defined
   font-family: 'Offside', cursive;
   position: absolute;
   font-size: 80%;
-  margin-left: -100px;
+  /* margin-left: -100px; */
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
 
